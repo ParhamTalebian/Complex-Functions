@@ -1,0 +1,1206 @@
+\documentclass[12pt]{report}
+\usepackage{lipsum} % For dummy text, you can remove this line
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{shapepar}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{xecolor}
+\usepackage{mathtools}
+\usepackage{upgreek}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage{xepersian}
+\settextfont{XB Kayhan}
+
+\setlength{\parindent}{10pt} 
+
+
+\begin{document}
+	
+	
+	\title{توابع مختلط دکتر رضی}
+	\author{پرهام طالبیان}
+	\date{\today}
+	\maketitle
+	
+
+	\tableofcontents
+	\chapter{یادآوری}
+	
+	\section{اعداد مختلط}
+	فرض کنید
+	$$\mathbb{R} = \mathbb{R} \times \mathbb{R} = \{(x, y), x, y \in \mathbb{R}\}$$
+	حاصلضرب دکارتی اعداد حقیقی باشد در اینصورت مجموعه اعداد مختلط که با
+	$\mathbb{C}$
+	نمایش داده می‌شود عبارت از 
+	$\mathbb{R}^2$
+	به همراه اعمال جبری زیر:
+	\begin{enumerate}
+		\item 
+		عمل جمع
+		$$(x_1,y_1) + (x_2,y_2) = (x_1+x_2, y_1+y_2)$$
+		\item
+		عمل ضرب
+		$$(x_1,y_1) \times (x_2,y_2) = (x_1x_2 - y_1 y_2, x_1y_2+y_1x_2)$$
+		\item
+		عمل ضرب اسکالر
+		$$\alpha(x, y) = (\alpha x , \alpha y) \,,\, \alpha \in \mathbb{R}$$
+
+	\end{enumerate}
+	
+	$$\mathbb{C} = \{x+iy, x, y \in \mathbb{R} ; i^2 = -1\}$$
+	\subsection{ویژگی ها}
+	\begin{enumerate}
+		\item 
+		هر دو عدد مختلط یک زوج مرتب 
+		$Z=(x, y)$
+		می‌باشد که
+		$$x = Re(Z) \qquad y = Im(z)$$
+		\item
+		برای هر عدد مختلط
+		$Z = (x, y)$
+		قدرمطلق Z به صورت زیر تعریف می‌شود
+		$$|Z| = \sqrt{x^2+y^2}$$
+		\item
+		مزدوج عدد مختلط 
+		$Z=(x, y)$
+		،
+		$\bar{z}$
+		به صورت زیر تعریف می‌شود
+		$$\bar{z} =(x, -y)$$
+		\item
+		برای هر عدد مختلط  
+		$z$
+		داریم:
+		$z \bar{z} = |z|^2\qquad$
+		\item
+		قسمت حقیقی و موهومی عدد مختلط
+		$z = x+iy$
+		بر حسب 
+		$z$
+		و
+		$\bar{z}$
+		به صورت زیر است
+		$$x=\frac{z+\bar{z}}{2} \qquad y=\frac{z - \bar{z}}{2i}$$
+		\item
+		تقسیم
+		$\frac{z_1}{z_2}$
+		به صورت زیر است
+		$$\frac{z_1}{z_2} = \frac{z_1\bar{z_2}}{z_2\bar{z_2}} = \frac{z_1\bar{z_2}}{|z_2|^2} = (\frac{x_1x_2+y_1y_2}{x_2^2+y_2^2}, \frac{x_2y_1 - x_1y_2}{x_1^2+x_2^2})$$
+	\end{enumerate}
+	
+	بین اعداد مختلط و زیر مجموعه ماتریس ها تناظر یک به یک به صورت زیر برقرار است.
+	
+	\[
+	a + ib \Leftrightarrow \begin{pmatrix}
+		a & -b \\
+		b & a \\
+		
+	\end{pmatrix}
+	\]
+	اگر 
+	$a + ib \neq 0$
+	آن‌گاه	
+	\[
+	a + ib \Leftrightarrow \begin{pmatrix}
+		a & -b \\
+		b & a \\
+		
+	\end{pmatrix} \Leftrightarrow
+	\sqrt{a^2+b^2} \begin{pmatrix}
+		\frac{a}{\sqrt{a^2+b^2}} & \frac{-b}{\sqrt{a^2+b^2}} \\
+		\frac{b}{\sqrt{a^2+b^2}} & \frac{a}{\sqrt{a^2+b^2}} \\
+	\end{pmatrix}
+	\]
+	\[
+	= \sqrt{a^2+b^2} \begin{pmatrix}
+		\cos \phi & -\sin \phi \\
+		\sin \phi & \cos \phi 
+	\end{pmatrix} \Leftrightarrow |a + ib| \exp^{i \phi}
+	\]
+	که شامل یک دوران با اندازه 
+	$\phi$
+	حول مبدا و یک تجانس با ضریب
+	$\sqrt{a^2+b^2}$
+	می‌باشد.
+	
+	همچنین برای ضرب در عدد مختلط هم ارزی های زیر را داریم:
+	\[
+	(a+ib) \times (x + iy) \Leftrightarrow \begin{pmatrix}
+		a & -b\\
+		b & a\\
+	\end{pmatrix} \times \begin{pmatrix}
+	x \\
+	y\\
+\end{pmatrix} \Leftrightarrow\begin{pmatrix}
+a & -b\\
+b & a\\
+\end{pmatrix} \times \begin{pmatrix}
+x & -y\\
+y & x \\
+\end{pmatrix}
+	\]
+	
+	\textbf{مثال:}
+	فرض کنید
+	$k>0$
+	،
+	$z_1$
+	و
+	$z_2$
+	اعداد مختلط ثابتی باشند. مکان هندسی
+	$|\frac{z - z_1}{z - z_2}| = k$
+	را مشخص کنید.
+	\[
+	|\frac{z - z_1}{z - z_2}|^2 = k^2 \Leftrightarrow (\frac{z-z_1}{z- z_2})(\frac{\bar{z} - \bar{z_1}}{\bar{z} - \bar{z_2}} ) = k^2
+	\]
+	\[
+	\Leftrightarrow (k^2 - 1)z\bar{z} + (z_1 - k^2 z_2)\bar{z} + (\bar{z_1}- k^2 \bar{z_2})z - z_1 \bar{z_1} + k^2 z_2 \bar{z_2}= 0
+	\]
+	اگر 
+	$k \neq 1$
+	آنگاه معادله فوق معادله یک دایره است که توسط رابطه زیر مشخص می‌شود
+	\[
+	|z -\frac{z_1 - k^2z_2}{1 - k^2}| = \frac{k}{|1 - k^2|} |z_1 - z_2| \,,\, z_1 \neq z_2
+	\]
+	اگر 
+	$k = 1$
+	\[
+	(z_1 - z_2)\bar{z} + (\bar{z_1} - \bar{z_2}) z - z_1\bar{z_1} + z_2\bar{z_2} = 0 \Leftrightarrow |z-z_1| = |z-z_2|
+	\]
+	که معادله عمود منصف خطی است که 
+	$z_1$
+	را به 
+	$z_2$
+	وصل می‌کند.
+	
+	\textbf{نکته:}
+	دو بردار 
+	$z_1$
+	و
+	$z_2$
+	را موازی گویند هر گاه عدد حقیقی غیر صفر 
+	$k$
+	وجود داشته باشد بطوریکه
+	$$z_1 = kz_2 \Leftrightarrow z_1 \bar{z_2} = k |z_2|^2 \Rightarrow Im\{z_1 \bar{z_2}\}= 0$$
+	دو بردار 
+	$z_1$
+	و 
+	$z_2$
+	عمود بر هم گویند اگر و تنها اگر عدد حقیقی غیر صفر 
+	$k$
+	وجود داشته باشد بطوریکه
+	$z_1 = k z_2 e^{i\frac{\pi}{2}}$
+	
+	\subsection{شناسه یا آرگومان}
+	اندازه ای از زاویه
+	$\theta$
+	که بردار غیر صفر
+	$z$
+	با محور حقیقی مثبت می‌سازد یک شناسه یا آرگومان نامیده می‌شود و با
+	$\arg{z}$
+	نمایش داده می‌شود
+	$$\cos (\arg z) = \frac{Re\{z\}}{|z|} \qquad \sin(\arg z) = \frac{Im\{z\}}{|z|}$$
+	
+	$Arg \, z$
+	را برای مقدار مشخص و منحصر به فرد از
+	$$-\pi < \arg z \leq \pi \quad or \quad 0\leq  \arg z < 2\pi$$
+	به کار می‌بریم این مقدار 
+	$\theta$
+	به مقدار اصلی شناسه مرسوم است.
+	
+	برای هر عدد حقیقی 
+	$\theta$
+	داریم
+	$$e^{i \theta} = \cos \theta + i \sin \theta$$
+	برای عدد مختلط
+	$z$
+	 نیز برابر است یعنی
+	 $e^{iz} = \cos z + i \sin z$
+	 
+	 نمایش قطبی اعداد مختلط:
+	 $$z = x +iy = |z|(\cos (Arg z) + i sin(Arg z)) = r (\cos ]\theta + i \sin \theta) = |z|e^{iArg z} = re^{i\theta}$$
+	 
+	 \subsection{توان عدد مختلط}
+	 برای عدد مختلط غیر صفر
+	 $z = x + iy = r(\cos \theta + i \sin \theta)$
+	 توان 
+	 $n$
+	 ام
+	 به فرمول دموآر مدوف است به صورت زیر داریم
+	 $$z^n = r^n(\cos n\theta + i \sin n\theta) = r^n \exp^{in\theta} \,,\, n \in \mathbb{Z}$$
+	 
+	 \textbf{مثال:}
+	 مقدار 
+	 $(1 - i)^{16}$
+	 را بدست آورید.
+	 $$1 - i = \sqrt{1^2 + (-1)^2} e^{i (-\frac{\pi}{4})} = \sqrt{2}e^{i (-\frac{\pi}{4})}$$
+	 $$z^n = r^n(\cos n \theta + i\sin n\theta) \Rightarrow (1 - i)^{16} = \sqrt{2}^{16} (\cos (-\frac{-16 \pi}{4}) + i \sin (-\frac{-16 \pi}{4})) = 2^8(1+ 0i) = 2^8$$
+	 \subsubsection{ریشه عدد مختلط}
+	 عدد مختلط 
+	 $z$
+	 را درنظر بگیرید عدد مختلط 
+	 $w$
+	 را ریشه 
+	 $n$
+	 ام 
+	 $z$
+	 می‌گیریم هرگاه
+	 $w^n = z\qquad$
+	 $$z = re^{i \theta} = r(\cos \theta_0 + i sin \theta_0) $$
+	 $$ w = \sqrt[n]{r}(\cos \frac{2k\pi + \theta_0}{n} + i \sin \frac{2k\pi + \theta_0}{n}) ; k = 0, 1, 2, \dots, n -1 $$
+	 
+	 \textbf{مثال:}
+	 ریشه معادله 
+	 $z^4 - 1 = i$
+	 را بدست آورید.
+	 $$z^4 = 1 + i = \sqrt{2}(\cos (\frac{ \pi}{4}) + i \sin (\frac{ \pi}{4}))$$
+	 $$z = \sqrt[8]{2} (\cos \frac{2k\pi + \frac{ \pi}{4}}{4} + i \sin \frac{2k\pi + \frac{ \pi}{4}}{4}) ; k = 0, 1, 2, 3$$
+	 $$z_0=\sqrt[8]{2} (\cos \frac{ \pi}{16} + i \sin \frac{ \pi}{16})$$
+	 $$z_1 = (\cos \frac{ 2\pi + \frac{\pi}{4}}{4} + i \sin \frac{ 2\pi + \frac{\pi}{4}}{4}) = \sqrt[8]{2} (\cos \frac{\pi}{2}+\frac{ \pi}{16} + i \sin \frac{\pi}{2}+\frac{ \pi}{16})$$
+	 $$ z_2 = z_3 $$
+	 \section{همسایگی}
+	 یک همسایگی عدد حقیقی
+	 $x_0$
+	 فاصله ای به شکل 
+	 $(x_0 - r, x_0 + r)$
+	 است که 
+	 $r$
+	 یک عدد حقیقی و مثبت است.
+	 $$N_r(x_0 ) = \{x \in \mathbb{R}; |x-x_0| < r\} \subseteq \mathbb{R}$$
+	 \section{نقطه درونی}
+	 نقطه درونی 
+	 $z_0$
+	 را نقطه درونی 
+	 $S \subseteq \mathbb{C}$
+	 گوییم هر گاه همسایگی از 
+	 $z_0$
+	 داشته باشد که درون 
+	 $S$
+	 است.
+	 \section{مجموعه باز}
+	 مجموعه
+	 $S \subseteq \mathbb{C}$
+	 را باز گوییم هرگاه دو نقطه آن درونی باشد.
+	 \subsection{نقطه  خارجی}
+	 نقطه 
+	 $z_0$
+	 را نقطه خارجی 
+	 	 $S \subseteq \mathbb{C}$
+	 	 گوییم هرگاه یک همسایگی 
+	 	 $z_0$
+	 	 در مجموعه 
+	 	 $S$
+	 	 نباشد.
+	 	 \subsection{نقطه مرزی}
+	 	 نقطه 
+	 	 $z_0$
+	 	 را نقطه مرزی مجموعه 
+	 	 	 	 $S \subseteq \mathbb{C}$
+	 	 	 	 گوییم هرگاه نه نقطه داخلی و نه نقطه خارجی باشد.
+	 	 	 	 \section{نقطه حدی}
+	 	 	 	 نقطه 
+	 	 	 	 $z_0$
+	 	 	 	 را نقطه حدی 
+	 	 	 	 	 	 $S \subseteq \mathbb{C}$
+	 	 	 	 	 	 گوییم هرگاه
+	 	 	 	 	 	 $$\forall r > 0 \quad N_r(z_0) \cap S \textbackslash \{z_0\} \neq \emptyset$$
+	 	 	 	 	 	 \section{مجموعه بسته}
+	 	 	 	 	 	 مجموعه
+	 	 	 	 	 	 	 	 $S \subseteq \mathbb{C}$
+	 	 	 	 	 	 	 	 بسته است هرگاه شامل همه نقاط حدی اش باشد.
+	 	 	 	 	 	 	 	 \section{بستار مجموعه}
+	 	 	 	 	 	 	 	 بستار مجموعه
+	 	 	 	 	 	 	 	 	 	 	 	 	 	 $S \subseteq \mathbb{C}$
+	 	 	 	 	 	 	 	 	 	 	 	 	 	 را با 
+	 	 	 	 	 	 	 	 	 	 	 	 	 	 $\bar{S}$
+	 	 	 	 	 	 	 	 	 	 	 	 	 	 نمایش می‌دهند و شامل نقاط
+	 	 	 	 	 	 	 	 	 	 	 	 	 	 $S$
+	 	 	 	 	 	 	 	 	 	 	 	 	 	 و نقاط حدی 
+	 	 	 	 	 	 	 	$S$
+	 	 	 	 	 	 	 	است.
+	 	 	 	 	\section{صفحه مختلط توسعه یافته}
+	 	 	 	 	$$\mathbb{C}^\star = \mathbb{C} \cup \{\mp \infty\}$$
+	 	 	 	 	
+	 	 	 	 	\textbf{مثال: }
+	 	 	 	 	$\lim_{z \to z_0}f(z) = w_0$
+	 	 	 	 	$$\forall \epsilon > 0 , \exists \delta > 0 , \forall z (|z - z_0|< \delta \Rightarrow |f(z) - w_0|<\epsilon)$$
+	 	 	 	 	  	 $\lim_{z \to \infty} f(z) = w_0$	
+	 	 	 	 	  	$$\forall \epsilon > 0 \quad \exists \delta>0 \quad \forall (\frac{1}{|z|} < \delta) \Rightarrow |f(z) - w_0| < \epsilon) $$ 
+	 	 	 	 	  	$\lim_{z \to -\infty} = w_0$
+	 	 	 	 	  		 	 	 	 در کامپلکس ها منفی نداریم چون ترتیب ندارد.
+	 	 	 	 	 	 	 	 	 	 	 	 	 	 
+	 	 	 	 
+	 	 	 	 $$d(x, y) = |x| + |y| \qquad d(x, y) = |x+ y|$$
+	 	 	 	 
+	 	 	 	 $$\mathbb{C}^\star = \mathbb{C} \cup \{ \infty\} \qquad \lim_{z \to \infty} f(z) = w_0$$
+	 	 	 	 $$\forall \epsilon > 0 , \exists \delta > 0 , \forall z (\frac{1}{|z|} < \delta \Rightarrow |f(z) - w_0| < \epsilon)$$
+	 	 	 	 
+	 	 	 	 
+	 	 	 	 \textbf{مثال:}
+	 	 	 	 $\lim_{z \to z_0} f(z) = \infty$ 
+	 	 	 	 $$\forall > 0 \quad \exists \delta > 0 \quad \forall z , (|z-z_0|< \delta \Rightarrow \frac{1}{f(z)} < \epsilon)$$	 	 	 	 	 	 	 	 	 	 
+	 	 	 	 \textbf{نکته:}
+	 	 	 	 $$\lim_{z \to z_0} f(z) = \infty \Leftrightarrow \lim_{z \to z_0} \frac{1}{f(z)} = 0$$
+	 	 	 	 $$\lim_{z \to \infty} f(z) = w_0 \Leftrightarrow \lim_{z \to 0} f(\frac{1}{z}) = w_0$$
+	 	 	 	 $$\lim_{z \to \infty}f(z) = \infty \Leftrightarrow \lim_{z \to 0} f(\frac{1}{f(z)}= 0$$
+	 	 	 	 
+	 	 	 	 \section{نگاشت مختلط}
+	 	 	 	 فرض کنید 
+	 	 	 	 $S$
+	 	 	 	 یک مجموعه باشد تابع مختلط 
+	 	 	 	 $w$
+	 	 	 	 را از متغیر های
+	 	 	 	 $z = x = iy$
+	 	 	 	 به صورت 
+	 	 	 	 $f: S \subseteq \mathbb{C} \rightarrow \mathbb{C}$
+	 	 	 	 $$w = f(z) = u(x, y) + iv(x, y)$$
+	 	 	 	 $g:S \subseteq \mathbb{R} \rightarrow \mathbb{C}$
+	 	 	 	 $$w = g(t) = x(t) + iy(t) = (x(t), y(t))$$
+	 	 	 	 نمایش می‌دهیم.
+	 	 	 	 
+	 	 	 	 تابع 
+	 	 	 	 $w = f(z)$
+	 	 	 	 تک کقداری است اگر به ازای هر مقدار از 
+	 	 	 	 $z$
+	 	 	 	 در حوزه تعریف 
+	 	 	 	 $S$
+	 	 	 	 یک و تنها یک  مقدار  به 
+	 	 	 	 $w$
+	 	 	 	 نسبت داده می‌شود.
+	 	 	 	 
+	 	 	 	 مثال
+	 	 	 	 \begin{enumerate}
+	 	 	 	 	\item 
+	 	 	 	 	تابع
+	 	 	 	 	$w=f(z) = z^2$
+	 	 	 	 	تک مقداریست.
+	 	 	 	 	\item
+	 	 	 	 	تابع 
+	 	 	 	 	$Arg(z)$
+	 	 	 	 	تک مقداری است.
+	 	 	 	 	\item
+	 	 	 	 	$Im\{z\} \quad, \quad Re\{z\} \quad , \quad |z|$
+	 	 	 	 	تک مقداریست.
+	 	 	 	 	
+	 	 	 	 \end{enumerate}
+ 	 	 	 \textbf{تعریف:}
+ 	 	 	 تابع 
+ 	 	 	 $w = f(z)$
+ 	 	 	 چند مقداری است اگر برای بعضی یا تمام مقادیر 
+ 	 	 	 $z$
+ 	 	 	 در حوزه تعریف
+ 	 	 	 $S$
+ 	 	 	 ،
+ 	 	 	 مقادیر مختلفی به 
+ 	 	 	 $w$
+ 	 	 	 نسبت داده شود.
+ 	 	 	 
+ 	 	 	 مثال:
+ 	 	 	 \begin{enumerate}
+ 	 	 	 	\item 
+ 	 	 	 	تابع 
+ 	 	 	 	$w = f(z) = z^{\frac{1}{2}}\qquad f: \mathbb{C} \rightarrow \mathbb{C}$
+ 	 	 	 	$$z = i \qquad (i)^{\frac{1}{2}} = \mp \frac{\sqrt{2}}{2}(1 + i1)$$
+ 	 	 	 	\item
+ 	 	 	 	تابع چند مقداری
+ 	 	 	 	$\arg z  = 2k \pi + Arg z , \quad k= 0, \mp1, \mp 2 , \dots \qquad k \in \mathbb{Z}$
+ 	 	 	 	
+ 	 	 	 \end{enumerate}
+  	 	 \chapter{فصل دوم}
+  	 	 \section{حد}
+ 	 	 	 
+	 	 	 	  فرض کنید تابع 
+	 	 	 	  $w = f(z)$
+	 	 	 	  در همه نقاط 
+	 	 	 	  $z$
+	 	 	 	  از یک همسایگی محذوف 
+	 	 	 	  $z_0$
+	 	 	 	  تعریف شده باشد حد تابع 
+	 	 	 	  $w = f(z)$
+	 	 	 	  در نقطه 
+	 	 	 	  $z_0$
+	 	 	 	  را با نماد 
+	 	 	 	  $$\lim_{z \to z_0} f(z) = w_0$$
+	 	 	 	  نمایش می دهیم و بدان معنی است که 
+	 	 	 	  $$\forall \epsilon > 0 , \exists \delta > 0 , \forall z > 0 (|z - z_0| < \delta \Rightarrow |f(z) - w_0| < \epsilon)$$
+	 	 	 	  
+	 	 	 	  \textbf{نکته:}
+	 	 	 	  وقتی که 
+	 	 	 	  $z \to z_0$
+	 	 	 	  ممکن است 
+	 	 	 	  $z$
+	 	 	 	  در امتداد مسیر های مختلف به 
+	 	 	 	  $z_0$
+	 	 	 	  نزدیک شود در صورت وجود حد
+	 	 	 	  ،
+	 	 	 	  حاصل تمامی حدود باهم برابر هستند.
+	 	 	 	  \textbf{مثال:}
+	 	 	 	  ثابت کنید نگاشت 
+	 	 	 	  $f(z) = Arg z$
+	 	 	 	  روی قسمتم منفی محور حقیقی حد ندارد.
+	 	 	 	  
+	 	 	 	  \textbf{اثبات:}
+	 	 	 	  فرض کنید
+	 	 	 	  $z_0 \in (- \infty , 0)$
+	 	 	 	  
+	 	 	 	  $$z_n = z_0 + \frac{i}{n} \quad ; \quad z' = z  - \frac{i}{n}$$
+	 	 	 	  $$f(z_n) = Arg(z_n) = \arctan(\frac{1}{nz_0}) = n$$
+	 	 	 	  $$f(z'_n) = Arg(Z_n') =\arctan(\frac{-1}{nz_0}) = -\arctan(\frac{1}{nz_0}) = -n$$	
+	 	 	 	  
+	 	 	 	  \section{پیوستگی}
+	 	 	 	  تابع 
+	 	 	 	  $f: S \subseteq \mathbb{C} \rightarrow \mathbb{C}$
+	 	 	 	  در نقطه 
+	 	 	 	  $z_0$
+	 	 	 	  پیوسته است هرگاه
+	 	 	 	  $$\lim_{z \to z_0} f(z) = f(z_0)$$
+	 	 	 	  
+	 	 	 	  \textbf{مثال}:
+	 	 	 	  پیوستگی تابع زیر را در 
+	 	 	 	  $z_0 = (0, 0)$
+	 	 	 	  را بررسی کنید.
+	 	 	 	  \[
+	 	 	 	  f(z)=
+	 	 	 	  \begin{cases}
+	 	 	 	  	\frac{\bar{z}}{z} \qquad z \neq (0,0) \\
+	 	 	 	  	1 \qquad z = (0,0)\\
+	 	 	 	  \end{cases}
+	 	 	 	  \]
+	 	 	 	  
+	 	 	 	  $$\lim_{z \to (0,0)} f(z) = \lim_{y \to 0} \frac{-iy}{iy} = -1$$
+	 	 	 	  $$\lim_{z \to (0,0)} f(z) = \lim_{x \to 0} \frac{x}{x} = 1$$
+	 	 	 	  حد نداریم.
+	 	 	 	  
+	 	 	 	  \begin{itemize}
+	 	 	 	  	\item 
+	 	 	 	  	روش دوم(قطبی):
+	 	 	 	  	
+	 	 	 	  	$$x = r\cos \theta , y = r\sin \theta$$
+	 	 	 	  	$$\lim_{z \to (0,0)} f(z) = \lim_{r \to 0} \frac{r(\cos \theta - i\sin)}{r(\cos \theta + i \sin \theta)} = \lim_{r \to 0} \frac{(\cos \theta - i\sin)}{(\cos \theta + i \sin \theta)} = \frac{(\cos \theta - i\sin)}{(\cos \theta + i \sin \theta)}$$
+	 	 	 	  	حد ندارد.
+	 	 	 	  	\section{پیوستگی یکنواخت}
+	 	 	 	  	تابع
+	 	 	 	  	$w = f(z)$
+	 	 	 	  	را در ناحیه 
+	 	 	 	  	$\mathbb{R}$
+	 	 	 	  	پیوسته یکنواخت می‌گوییم
+	 	 	 	  	$$\forall \epsilon > 0 \quad \exists \delta > 0  \quad \forall z_1, z_2 (|z_1 - z_2| < \delta \Rightarrow |f(z_1) - f(z_2)| < \epsilon)$$
+	 	 	 	  	
+	 	 	 	  	\textbf{مثال}:
+	 	 	 	  	تابع 
+	 	 	 	  	$f(z) = \frac{1}{z}$
+	 	 	 	  	روی مجموعه 
+	 	 	 	  	$R = \{z \in \mathbb{C} ; 0<|z|<1\}$
+ 	 	 	  	پیوسته یکنواخت نیست.
+ 	 	 	  	
+ 	 	 	  	\textbf{مثال:}
+ 	 	 	  	تابع
+	 	 	 	  		 	 	 	  	$f(z) = \frac{1}{z}$
+	 	 	 	  	روی مجموعه
+	 	 	 	  	$$R_\eta = \{z \in \mathbb{C} ; |z|\geq \eta , \eta > 0\}$$
+	 	 	 	  	پیوسته یکنواخت هست.
+	 	 	 	  \end{itemize}
+ 	 	 	  
+ 	 	 	  \section{مشتق}
+ 	 	 	  فرض کنید تابع
+ 	 	 	  $f(z) = w$
+ 	 	 	  را در دامنه 
+ 	 	 	  $D \subseteq \mathbb{C}$
+ 	 	 	  دراین صورت مشتق
+ 	 	 	  $f(z)$
+ 	 	 	  در نقطه
+ 	 	 	  $z_0$
+ 	 	 	  که آن را با 
+ 	 	 	  $f'(z_0)$
+ 	 	 	  نمایش می‌دهیم به صورت زیر تعریف می‌شود.
+ 	 	 	  $$f'(z_0) =\lim_{z \to z_0} \frac{f(z) - f(z_0)}{z-z_0}$$
+ 	 	 	  
+ 	 	 	  \textbf{مثال:}
+ 	 	 	  نشان دهید تابع
+ 	 	 	  $f(z) = \bar{z}$
+ 	 	 	  در صفحه مختلط مشتق پذیر نیست.
+ 	 	 	  
+ 	 	 	  فرض کنید
+ 	 	 	  $z_0 \in \mathbb{C}$
+ 	 	 	  دلخواه باشد 
+ 	 	 	  $z = x+iy \quad , \quad z_0 = x_0 + iy_0\quad$
+ 	 	 	  
+ 	 	 	  $$f'(z_0) = \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z-z_0} = \lim_{z \to z_0} \frac{\bar{z} - \bar{z_0}}{z - z_0}$$
+ 	 	 	  
+ 	 	 	  $$\overset{x = x_0 , z = x_0 + iy}{=} \lim_{y \to y_0} \frac{x_0 - iy - x_0 + iy_0}{x_0 - iy - x_0 - iy_0} = \lim_{z \to z_0} \frac{-iy+iy_0}{iy - iy_0} = -1$$
+ 	 	 	  
+ 	 	 	  $$\lim_{z \to z_0} \frac{\bar{z} - \bar{z_0}}{z - z_0}\overset{y = y_0 , z = x + iy_0}{=} \lim_{x \to x_0} \frac{x- iy_0 - x_0 + iy_0}{x - iy_0 - x_0 - iy_0} = \lim_{x \to x_0}\frac{x - x_0}{x - x_0} = 1$$
+ 	 	 	  
+ 	 	 	  \section{معادلات کشی-ریمان}
+ 	 	 	  تابع
+ 	 	 	  $w = f(z) = u(x, y) + i v(x, y)$
+ 	 	 	  در نقطه
+ 	 	 	  $z_0 = x_0 + iy_0$
+ 	 	 	  مشتق پذیر باشد آنگاه معادلات زیر برقرار است.
+ 	 	 	  \[
+ 	 	 	  \begin{cases}
+ 	 	 	  	\frac{\partial u}{\partial x} (z_0) = \frac{\partial v}{\partial y} (z_0)\\
+				\frac{\partial u}{\partial y} (z_0) = \frac{\partial v}{\partial x} (z_0)
+ 	 	 	  \end{cases}
+ 	 	 	  \]
+ 	 	 	  شرط لازم مشتق پذیری در نقطه 
+ 	 	 	  $z_0=(x_0, y_0)$
+ 	 	 	  \[
+ 	 	 	  \begin{cases}
+ 	 	 	  	u_x(z_0) = v_y(z_0)\\
+ 	 	 	  	u_y(z_0) = v_x(z_0)
+ 	 	 	  \end{cases}
+ 	 	 	  \]
+ 	 	 	  مشتق تابع در نقطه 
+ 	 	 	  $z_0$
+ 	 	 	  به صورت 
+ 	 	 	  $$f'(z_0) = \frac{\partial u}{\partial x}(z_0) + i\frac{\partial v}{\partial x}(z_0) = \frac{\partial f}{\partial x}(z_0)$$
+ 	 	 	  
+ 	 	 	  یا
+ 	 	 	  $$f'(z_0) = \frac{\partial v}{\partial y}(z_0) - i\frac{\partial u}{\partial y}(z_0) = \frac{1}{i}\frac{\partial f}{\partial y}(z_0)$$
+ 	 	 	  
+ 	 	 	  \textbf{مثال:}
+ 	 	 	  برای تابع
+ 	 	 	  $$f(z) = \bar{z} = x - iy \quad, \quad u(x, y) = x , v(x, y) = y$$
+ 	 	 	  معادلات  کشی -ریمان در نقطه دلخواه 
+ 	 	 	  $z=z_0$
+ 	 	 	  به صورت زیر است:
+ 	 	 	  $$u(x, y) = x \quad,\quad v(x, y) = -y$$
+ 	 	 	  $$\frac{\partial u}{\partial x}=1 \quad, \quad\frac{\partial v}{\partial y} = -1$$
+ 	 	 	  $$\frac{\partial u}{\partial y} = 0\quad , \quad \frac{\partial v}{\partial x} = 0$$
+ 	 	 	  شرط لازم مشتق پذیر را ندارد پس در هیچ نقطه ای از 
+ 	 	 	  $\mathbb{C}$
+ 	 	 	  مشتق پذیر نیست.
+ 	 	 	  \textbf{مثال:}
+ 	 	 	  \[
+ 	 	 	  f(z) = 
+ 	 	 	  \begin{cases}
+ 	 	 	  	\frac{(1+i)xy}{x^3+y^3} \qquad z \neq 0\\
+ 	 	 	  	0 \qquad z = 0
+ 	 	 	  \end{cases}
+ 	 	 	  \]
+ 	 	 	  مشتق پذیری تابع فوق را در 
+ 	 	 	  $z=0$
+ 	 	 	  بررسی کنید.
+ 	 	 	  
+ 	 	 	  \[
+ 	 	 	  f(z) = 
+ 	 	 	  \begin{cases}
+ 	 	 	  	\frac{xy}{x^3+y^3} + i \frac{xy}{x^3+y^3} \qquad z \neq 0\\
+ 	 	 	  	0 \qquad z = 0
+ 	 	 	  \end{cases}
+ 	 	 	  \]
+ 	 	 	  $$u(x, y) = \frac{xy}{x^3+y^3} \quad , \quad v(x, y) = \frac{xy}{x^3+y^3}$$
+ 	 	 	  $$\frac{\partial u}{\partial x}(0, 0) = \lim_{x \to 0} \frac{u(x, 0) - u(0,0)}{x} = \lim_{x \to 0} \frac{0 - 0}{x} = 0$$
+ 	 	 	  $$\frac{\partial v}{\partial y}(0, 0) = \lim_{y \to 0} \frac{v(0, y) - v(0,0)}{y} = \lim_{y \to 0} \frac{0 - 0}{y} = 0$$
+ 	 	 	  $$\frac{\partial u}{\partial y}(0, 0) = \lim_{y \to 0} \frac{u(0, y) - u(0,0)}{y} = \lim_{y \to 0} \frac{0 - 0}{y} = 0$$
+ 	 	 	  $$\frac{\partial v}{\partial x}(0, 0) = \lim_{x \to 0} \frac{v(x, 0) - v(0,0)}{x} = \lim_{x \to 0} \frac{0 - 0}{x} = 0$$
+ 	 	 	  
+ 	 	 	  $$f'(0,0) = \lim_{z \to (0,0)} \frac{f(z) - f(0, 0)}{z} = \lim_{(x, y) \to (0, 0)} \frac{\frac{(1+i)xy}{x^3+y^3} - 0}{x+iy} = \lim_{(x, y) \to (0, 0)} \frac{\frac{(1+i)xy}{x^3+y^3} - 0}{x+iy} \overset{x=y}{=}$$
+ 	 	 	  $$\lim_{z \to (0,0)} \frac{(1+i)xy}{(x^3+y^3)(x+iy)} = \lim_{x \to 0} \frac{(1 + i) x^2}{2x^3(1+i)x} = \lim_{x \to 0} \frac{(1+i)}{2x^2(1+i)} = \infty$$
+ 	 	 	  تابع در 
+ 	 	 	  $(0,0)$
+ 	 	 	  مشتق پذیر نیست.
+ 	 	 	  
+ 	 	 	  \section{معادلات کشی-ریمان در مختصات قطبی}
+ 	 	 	  از آنجایی که
+ 	 	 	  $x = r\cos \theta$
+ 	 	 	  و
+ 	 	 	  $y = r\sin \theta$
+ 	 	 	  می‌باشد اگر تابع 
+ 	 	 	  $w = f(z) =u(x, y) + iv(x, y)$
+ 	 	 	  در نقطه 
+ 	 	 	  $z_0 = x_0 + iy_0$
+ 	 	 	  مشتق پذیر باشد آنگاه
+ 	 	 	  \[
+ 	 	 	  \begin{cases}
+ 	 	 	  	\frac{\partial u}{\partial r} = \frac{1}{r} \frac{\partial v}{\partial \theta} (z_0)\\
+ 	 	 	  	\frac{\partial v}{\partial r} = -\frac{1}{r} \frac{\partial u}{\partial \theta} (z_0)
+ 	 	 	  	
+ 	 	 	  \end{cases}
+ 	 	 	  \] 
+ 	 	 	  و مشتق تابع در نقطه 
+ 	 	 	  $z_0$
+ 	 	 	  به صورت 
+ 	 	 	  $$f'(z_0) = e^{i \theta}(\frac{\partial u}{\partial r}(z_0) + i\frac{\partial v}{\partial r}(z_0)) = e^{-i\theta}(\frac{\partial f}{r}(z_0))$$
+ 	 	 	  
+ 	 	 	  
+ 	 	 	  \textbf{مثال:}
+ 	 	 	  برای تابع
+ 	 	 	  $f(z) = \ln z$
+ 	 	 	  با
+ 	 	 	  $-\pi < Arg z < \pi$
+ 	 	 	  و 
+ 	 	 	  $r>0$
+ 	 	 	  ،
+ 	 	 	  معادلات کشی-ریمان در نقطه دلخواه
+ 	 	 	  $z = re^{i\theta} \in \mathbb{C} \% (-\infty ,  0)$
+ 	 	 	  بررسی کنید.
+ 	 	 	  $$f(z) = \ln z = \ln (re^{i\theta}) = \ln r + \ln (e^{i\theta}) = \ln r + i\theta$$
+ 	 	 	  که
+ 	 	 	  $$u(r, \theta) = \ln r \quad , \quad v(r, \theta) = i\theta$$
+ 	 	 	  
+ 	 	 	  $$\frac{\partial u}{\partial r} = \frac{1}{r} \quad, \quad \frac{\partial v}{\partial \theta} = 1$$
+ 	 	 	  $$\frac{\partial u}{\partial r} = \frac{1}{r} = \frac{1}{r} \frac{\partial v}{\partial \theta} $$
+ 	 	 	  $$\frac{\partial v}{\partial r} = 0 \quad , \quad \frac{\partial u}{\partial \theta} = = 0$$
+ 	 	 	  $$f'(z_0) = e^{-i\theta}(\frac{\partial f}{\partial r]}(z_0)) = e^{-i \theta_0}(\frac{1}{r_0} + ix_0) = e^{-i \theta_0} \frac{1}{r_0} = \frac{1}{r_0e^{i\theta_0}} = \frac{1}{z_0}$$
+ 	 	 	  
+ 	 	 	  \section{تابع تحلیلی}
+ 	 	 	  تابع 
+ 	 	 	  $w= f(z)$
+ 	 	 	  در نقطه 
+ 	 	 	  $z$
+ 	 	 	  تحلیلی گوییم هرگاه یک همسایگی از این نقطه 
+ 	 	 	  
+ 	 	 	  $z$
+ 	 	 	  وجود داشته باشد به طوریکه در همه جا این همسایگی مشتق پذیر باشد.
+ 	 	 	  
+ 	 	 	  \textbf{تعریف تابع تام:}
+ 	 	 	  تابعی که در همه جای دامنه تابع تحلیلی باشد تابع تام نامیده می‌شود.
+ 	 	 	  
+ 	 	 	  \textbf{قضیه(شرط کافی تحلیلی بودن):}
+ 	 	 	  فرض کنید
+ 	 	 	  $f(z) = u(x, y) + iv(x, y)$
+ 	 	 	  در دامنه 
+ 	 	 	  $D$
+ 	 	 	  تعریف شده و توابع 
+ 	 	 	  $ u(x, y) , 	v(x, y)$
+ 	 	 	  دارای مشتقات جزئی پیوسته باشند و در تمام نقاط دامنه 
+ 	 	 	  $f$
+ 	 	 	  ،
+ 	 	 	  معادلات کشی-ریمان برقرار باشد در این صورت 
+ 	 	 	  $f(z)$
+ 	 	 	  در $D$
+ 	 	 	  تحلیلی است.
+ 	 	 	  
+ 	 	 	  \section{نقطه تکین}
+ 	 	 	  نقطه 
+ 	 	 	  $z_0$
+ 	 	 	  را تکین تابع 
+ 	 	 	  $w = f(z)$
+ 	 	 	  گوییم هرگاه در 
+ 	 	 	  $z_0$
+ 	 	 	  تحلیلی باشد و در نقطه ای از همسایگی
+ 	 	 	  $z_0$
+ 	 	 	  تحیلی باشد.
+ 	 	 	  \textbf{مثال:}
+ 	 	 	  $z= 0 $
+ 	 	 	  برای تابع
+ 	 	 	  $\frac{1}{z}$
+ 	 	 	  یک نقطه تکین است.	 	 
+ 	 	 	  
+ 	 	 	  \section{تابع همساز}
+ 	 	 	   هر تابع حقیقی
+ 	 	 	   \[
+ 	 	 	   \begin{cases}
+ 	 	 	   	u : \mathbb{R}^2 \rightarrow \mathbb{R}\\
+ 	 	 	   	(x, y) \rightarrow u(x, y)
+ 	 	 	   \end{cases}
+ 	 	 	   \]
+ 	 	 	   که دارای مشتقات جزئی مرتبه اول و دوم پیوسته باشد و در معادلات لاپلاس
+ 	 	 	   $\frac{\partial^2u}{\partial x^2}+ \frac{\partial^2u}{\partial y^2} = 0$
+ 	 	 	   صدق کند تابع همساز نامیده می‌شود.
+ 	 	 	   
+ 	 	 	   \textbf{قضیه:}
+ 	 	 	   اگر تابع 
+ 	 	 	   $f(z) = u(x, y) + iv(x, y)$
+ 	 	 	   در دامنه 
+ 	 	 	  $D$
+ 	 	 	  تحلیلی باشد توابع  مولفه ای آن یعنی 
+ 	 	 	  $u, v$
+ 	 	 	  در 
+ 	 	 	  $D$
+ 	 	 	  همساز هستند.
+ 	 	 	  
+ 	 	 	  \textbf{تعریف:}
+ 	 	 	  
+ 	 	 	  $v$
+ 	 	 	  مزدوج همسازی از 
+ 	 	 	  $u$
+ 	 	 	  نامیده می‌شود.
+ 	 	 	  
+ 	 	 	  
+ 	 	 	  \section{رابطه همسازی برای تابع تحلیلی در نمایش قطبی}
+ 	 	 	  اگر تابع
+ 	 	 	  $f(z) = u(r, \theta) + iv(r, \theta)$
+ 	 	 	  در دامنه 
+ 	 	 	  $D$
+ 	 	 	  تحلیلی باشد آنگاه
+ 	 	 	  $$ \frac{\partial^2 u}{\partial r^2} + \frac{1}{r}\frac{\partial u}{\partial r}+\frac{1}{r^2}\frac{\partial^2 u}{\partial \theta^2} = 0$$
+ 	 	 	  
+ 	 	 	  \textbf{مثال:}
+ 	 	 	  نشان دهید
+ 	 	 	  $u = 3x^2y + 2x^2-y^3 - 2y^2$
+ 	 	 	  یک تابع همساز است. تابع مزدوج همسازی آن را بدست آورید.
+ 	 	 	  $$\frac{\partial u}{\partial x} = 6xy + 4x \Rightarrow \frac{\partial^2 u}{\partial x^2} = 6y+4$$
+ 	 	 	  $$\frac{\partial u}{\partial y} = 3x^2-3y^2 - 4y \Rightarrow \frac{\partial^2u}{\partial y^2} = -6y-4$$
+ 	 	 	  در معادلات لاپلاس صدق می‌کند.
+ 	 	 	  
+ 	 	 	  فرض کنید
+ 	 	 	  $v$
+ 	 	 	  مزدوج همساز 
+ 	 	 	  $u$
+ 	 	 	  است در اینصورت
+ 	 	 	  $f(z) = u(x, y) + iv(x, y)$
+ 	 	 	  یک تابع تحلیلی است پس در معادلات کشی-ریمان صدق می‌کند
+ 	 	 	  $$\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} = 6xy+4x\Rightarrow v(x, y) = \int (6xy + 4x) dy = 3xy^2 + 4xy + g(x)$$
+ 	 	 	  $$\frac{\partial u}{\partial x} = - \frac{\partial v}{\partial x} = 3x^2 - 3y^2 - 4y$$
+ 	 	 	  
+ 	 	 	  $$\frac{\partial v}{\partial x} = -3x^2 + 3y^2 + 4y = 3y^2 + 4y + g'(x) \Rightarrow g'(x) = -3x^2 \Rightarrow g(x) = \int -3x^2 \, dx$$
+ 	 	 	  
+ 	 	 	  $$g(x) = -x^3 + c$$
+ 	 	 	  $$v(x, y) = 3xy^2 + 4xy - x^3 + c$$
+ 	 	 	  \section{توابع مقدماتی}
+ 	 	 	  \subsection{تابع نمایی}
+ 	 	 	  تابع نمایی را به ازای هر عدد مختلط
+ 	 	 	  $z = x+iy$
+ 	 	 	  به فرم
+ 	 	 	  $\exp(z) = e^z = e^x(\cos y + i\sin y) = e^x \cos y + e^x \sin y$
+ 	 	 	  تعریف می‌کنیم. تابع نمایی 
+ 	 	 	  $e^z$
+ 	 	 	  در شرط کشی-ریمان صدق می‌کند و مشتقات جزئی پیوسته دارد بنابراین در هر نقطه از صفحه مختلط مشتق پذیر است
+ 	 	 	  $(e^z)' = e^z$
+ 	 	 	  لذا تابع تحلیلی است.
+ 	 	 	  
+ 	 	 	  \textbf{مثال:}
+ 	 	 	  $\exp(\bar z) = e^{\bar z} = e^x(\cos y - i\sin y) = e^x \cos y - i \sin y$
+ 	 	 	  
+ 	 	 	  \[
+ 	 	 	  \begin{cases}
+ 	 	 	  	\frac{\partial u}{\partial x} = e^x \cos y\\
+ 	 	 	  	\frac{\partial v}{\partial y} = -e^x \cos y
+ 	 	 	  \end{cases}
+ 	 	 	  \]
+ 	 	 	  پس شرط لازم مشتق پذیر ندارد پس تحلیلی نیست.
+ 	 	 	  \subsection{خواص تابع نمایی}
+ 	 	 	  \begin{enumerate}
+ 	 	 	  	\item 
+ 	 	 	  	برای هر عدد مختلط
+ 	 	 	  	$z = x + iy$
+ 	 	 	  	داریم: 
+ 	 	 	  	$e^z \neq 0$
+ 	 	 	  	\item
+ 	 	 	  	$|e^z| = e$
+ 	 	 	  	
+ 	 	 	  	$$\arg(e^z) = y + 2k\pi , k \in \mathbb{Z}$$
+ 	 	 	  	\item
+ 	 	 	  	$$e^{2\pi i } = 1 \quad, \quad e^{z +2\pi i} = e^z$$
+ 	 	 	  	یعنی تابع
+ 	 	 	  	$e^z$
+ 	 	 	  	متتناوب است و دوره متناوب آن 
+ 	 	 	  	$2 \pi i$
+ 	 	 	  	
+ 	 	 	  	$$\arg(e^z) = \tan^-1(\frac{Im(e^z)}{Re(e^z)}) = \tan^-1(\frac{e^x \sin y}{e^x \cos y }) = y$$
+ 	 	 	  	
+ 	 	 	  \end{enumerate}
+ 	 	 	  
+ 	 	 	  \subsection{توابع مثلثاتی}
+ 	 	 	  برای هر عدد مختلط
+ 	 	 	  $z$
+ 	 	 	  فرمول اویلر به صورت زیر است
+ 	 	 	  $$e^{iz} = \cos(z)+i \sin(z)$$
+ 	 	 	  در این صورت  برای هر 
+ 	 	 	  $z$
+ 	 	 	  در صفحه مختلط با توجه به فرمول اویلر داریم:
+ 	 	 	  $$e^{\mp iz} = \cos z \mp i\sin z$$
+ 	 	 	  $$\cos z = \frac{e^{iz} + e^{-iz}}{2} \qquad \sin z = \frac{e^{iz} - e^{-iz}}{2i}$$
+ 	 	 	  
+ 	 	 	  \subsection{خواص توابع مثلثاتی}
+ 	 	 	  \begin{enumerate}
+ 	 	 	  	\item 
+ 	 	 	  	توابع 
+ 	 	 	  	$\sin z$
+ 	 	 	  	و
+ 	 	 	  	$\cos z$
+ 	 	 	  	در صفحه مختلط تحلیلی است.
+ 	 	 	  (چون تابع 
+ 	 	 	  $e^z$
+ 	 	 	  تحلیلی است)
+ 	 	 	  \item
+ 	 	 	  $(\sin z)' = \cos z \qquad (\cos z)' = - \sin z$
+ 	 	 	  \item
+ 	 	 	  $$\sin^2 z + \cos^2 z = 1$$
+ 	 	 	  \item
+ 	 	 	  $$\sin (i\theta) = i \sinh \theta$$
+ 	 	 	  $$\sin (i\theta) = \frac{e^{i(i\theta)} - e^{-i(i\theta)}}{2i} = \frac{e^{-\theta} - e^{+\theta}}{2i} = i\sinh \theta$$
+ 	 	 	  \item
+ 	 	 	  $$\cos (i\theta) =  \cosh \theta$$
+ 	 	 	  \item
+ 	 	 	  $$\sin(z) = \sin(x + iy)  = \sin x \cos(iy)  +cos x \sin(iy) = \sin x \cosh y + i \cos x \sinh y$$
+ 	 	 	  $$\qquad Re(\sin z) = \sin x \cosh y \qquad Im(\sin z) = i\cos x \sinh y$$
+ 	 	 	  
+ 	 	 	  
+ 	 	 	  \end{enumerate}
+  	 	  \subsection{توابع هایپربولیک}
+  	 	  $$\sinh z = \frac{e^z - e^{-z}}{2} \qquad \cosh z = \frac{e^z + e^{-z}}{2}$$
+  	 	  \subsection{خواص توابع هایپربولیک}
+  	 	  \begin{enumerate}
+  	 	  	\item 
+  	 	  	$\sinh z$
+  	 	  	و
+  	 	  	$\cosh z$
+  	 	  	در صفحه مختلط تحلیلی است.
+  	 	  	\item
+  	 	  	$$(\cosh z)' = \sinh z \qquad (\sinh z)' = \cosh z$$
+  	 	  	\item
+  	 	  	$$\cosh^2 - \sinh^ z = 1$$
+  	 	  	\item
+  	 	  	$$\cosh(iz) = \cos z$$
+  	 	  	\item
+  	 	  	$$\sinh(z) = \sinh(x + iy) =\sinh x \cos y+i \cosh x \sin y$$
+  	 	  	\item
+  	 	  	$$\cosh(z) = \cosh(x + iy) =\cosh x \cos y+i \sinh x \sin y$$
+  	 	  \end{enumerate}
+		\subsection{تابع لگاریتم}
+		لگاریتم را می‌توان به عنوان مقداری چون 
+	$w$
+	به طوریکه 	
+	$e^w = z$
+	باشد، تعریف کرد.
+	
+	اما این تعریف با توجه به متناوب بودن تابع نمایی، وجود لگاریتم منحصر به فرد را خنثی می‌کند. زیرا اگر
+	$e^w = z$
+	آنگاه برای هر عدد صحیح 
+	$k$
+	داریم:
+	$$e^{w + 2k \pi i} = z$$
+	از این رو لگاریتم عدد مختلط 
+	$z$
+	را که با 
+	$\ln z$
+	 نمایش می‌دهیم، به صورت مجموعه ای از همه مقادیر 
+	 $$w = \ln z \quad , \quad e^w = z$$
+	 باشد بنابراین 
+	 $$Ln (z) = \{w \in \mathbb{C} ; e^w = z\}$$
+	 $L$
+	 بزرگه چون چند مقداری است.
+	 
+	 فرض کنیم 
+	 $z = re^{i(\theta + 2k \pi)}$
+	 که 
+	 $k$
+	 عدد صحیح و 
+	 $r \neq 0$
+	 است. از معادله 
+	 $e^w = z$
+	 که 
+	 $w = u + iv$
+	 داریم 
+	 $$e^w = z \rightarrow e^{u + iv} = re^{i(\theta + 2k \pi)} \qquad e^u = r , v = \theta + 2k \pi ;k \in \mathbb{Z}$$
+	 بنابراین
+	 $w = u + iv = Ln (z) = \ln r + i(\theta + 2k\pi)\quad ;\quad k \in \mathbb{Z}$
+	 
+	 $$w = Ln (z) = \ln |z| + i \arg z$$
+	 از آنجایی که 
+	 $arg z$
+	 چند مقداری است تابع
+	 $Ln(z)$
+	 چند مقداری می‌باشد. با انتخاب 
+	 
+	 $\arg z = Arg z$
+	 لگاریتم
+	 $$Ln z = \ln z = \ln |z| + i Arg z$$
+	 که در آن 
+	 $-\pi < Arg z \leq \pi$
+	را لگاریتم اصلی می‌نامیم.
+	
+	\textbf{مثال:}
+	$$Ln 1 = \{w \in \mathbb{C} ; e^w = 1\} = \{2k\pi i;k \in \mathbb{Z}\}$$
+	$$\ln 1 = \{2k\pi i; k = 0\} = 0$$
+	
+	\textbf{مثال:}
+	$$Ln(-1) = \ln |-1| + i arg(-1) = \pi i + 2k\pi i ; k \in \mathbb{Z}$$
+	$$\ln (-1) = \pi i $$
+	
+	\textbf{مثال:}
+	$$Ln(1-\sqrt{-3}) = \{\ln 2 + i (2k\pi - \frac{\pi}{3}); k \in \mathbb{Z}\}$$
+	$$\ln(1-\sqrt{-3}) = \ln 2 - \frac{\pi}{3}$$
+	
+	\textbf{نکته:}
+	از آنجاییکه تابع تک مقداری 
+	$Arg z$
+	در
+	$$\mathbb{C} \backslash (-\infty, 0] = \{z \in \mathbb{C}; z + |z| \neq 0\} $$
+	پیوسته است لذا تابع لگاریتم اصلی 
+	$$\ln z = \ln |z| + iArg z \qquad -\pi < Arg z < \pi$$
+	در  
+	$\mathbb{C} \backslash (-\infty, 0]$
+	پیوسته است.
+	
+	مشتق تابع لگاریتم اصلی برای هر 
+	$z \in \mathbb{C} \backslash (-\infty, 0 ]$
+	تابع 
+	$$\ln z = \ln |z| + i Arg z = \ln r + i \theta = u(r, \theta) + iv(r, \theta) \qquad \ln r  = u(r, \theta) , \theta =  v(r, \theta)$$
+	\[
+	\begin{cases}
+		u_r = \frac{1}{r} = v_\theta\\
+		\theta_r = -\frac{1}{r} u_\theta
+	\end{cases}
+	\]
+	\[
+	\left.
+	\begin{array}{l}
+		u_r = \frac{1}{r} \\
+		u_\theta = 1
+	\end{array}
+	\right\} \Rightarrow \frac{1}{r} = \frac{1}{r}
+	\]
+	$$u_r = 0 , u_\theta = 0 \Rightarrow v_r = -\frac{1}{r}$$
+	
+	\[
+	\frac{d}{dz} \ln z = e^{-i\theta} \frac{\partial f}{\partial r} = e^{-i\theta(u_r + iv_r)} = e^{-i\theta(\frac{1}{r} + 0)} = \frac{1}{r} e^{-i\theta} = \frac{1}{re^{i\theta}} = \frac{1}{z}
+	\]
+	
+	\subsection{نمایی کسری}
+	برای دو عدد صحیح و مثبت
+	$m$
+	و
+	$n$
+	که نسبت به هم اول باشند، تعریف می‌کنیم.
+	$$(z^{\frac{1}{n}})^m = e^{\frac{m}{n} Ln z} = e^{\frac{m}{n}}(\ln |z| + i(Arg z + 2k \pi )) = e \qquad z \neq 0 , k = 0, 1, 2, \dots, n-1$$
+	دارای 
+	$n$
+	مقدار متمایز می‌باشد.
+	
+	فرض کنید
+	$c$
+	یک عدد مختلط باشد تعریف می‌کنیم
+	$$z^c = e^{c Lnz} = e^{c(\ln |z| + i (Arg z + 2k\pi))} = |z|^2 e^{i(Argz)} e^{i(2k\pi)} \quad z\neq 0 , k \in \mathbb{Z} $$
+	
+	 \textbf{نکته:}
+	 اگر 
+	 $C$
+	 گویا نباشد، آنگاه 
+	 $z^c$
+	 دارای بی‌نهایت مقدار است.
+	 \textbf{مثال:}
+	 مقادیر
+	 $5^\frac{1}{2}$
+	 را بدست آورید.
+	 $$	 5^\frac{1}{2} = e^{\frac{1}{2} Ln 5} = e^{\frac{1}{2}(\ln 5 + i(Arg 5 + 2k\pi))} = \sqrt{5} e^{k\pi i } = \mp \sqrt{5} \quad;\quad k = 0, 1$$
+	 
+	 \textbf{مثال:}
+	 مقادیر
+	 $i^i$
+	 را بدست آورید.
+	 $$ e^{i Ln i} = e^{i(\ln |i| + i(Arg 5 + 2k\pi))} =  e^{\frac{\pi}{2}+2k\pi i } \quad;\quad k \in \mathbb{Z}$$
+	 
+	 تابع
+	 $z^\frac{1}{n}$
+	 یک تابع 
+	 $n$
+	 مقداری در ریشه 
+	 $n$
+	 ام 
+	 $z$
+	 است یعنی
+	 $$z^\frac{1}{n} = e^{\frac{1}{n} Ln z} = e^{\frac{1}{n}(\ln |z| + i(Arg z + 2k\pi))} = |z|^\frac{1}{n} e^{i\frac{Arg(z)}{n}} e^{i\frac{2k\pi}{n}} \quad;\quad k = 0, 1, 2, \dots, n-1$$
+	 
+	 \section{تبدیل خطی}
+	 $$w = az + b$$
+	 \begin{enumerate}
+	 	\item 
+	 	اگر 
+	 	$a=1$
+	 	یک انتقال داریم و شکل در صفحه 
+	 	$w$
+	 	همانند شکل در صفحه 
+	 	$z$
+	 	است اما نسبت به مرکز مختصات به صورت متفاوت  جایگذاری شده اند.
+	 	\item
+	 	اگر 
+	 	$z_1 \rightarrow w_1 \qquad z_2 \rightarrow w_2$
+	 	آنگاه
+	 	$$|z_1 - z_2| = |w_1 - w_2| \qquad \arg(z_1- z_2) = \arg(w_1 - w_2)$$
+	 	\item
+	 	اگر
+	 	$a\neq 0$
+	 	و
+	 	$b =0 $
+	 	آنگاه
+	 	\begin{enumerate}
+	 		\item 
+	 		اگر 
+	 		$a$
+	 		حقیقی باشد آنگاه 
+	 		$$|w| = |a||z| \quad, \quad \arg w = \arg z$$
+	 		اگر 
+	 		$a>1$
+	 		یک انبساز داریم
+	 		
+	 		اگر 
+	 		$a<1$
+	 		یک انقباض داریم.
+	 		\item
+	 		اگر
+	 		$a$
+	 		مختلط باشد یعنی
+	 		$$a = |a| e^{i\alpha}$$
+	 		آنگاه نگاشت شامل یک دوران به اندازه
+	 		$\alpha$
+	 		حول مبدا یک اقباض یا انبساط است.
+	 		
+	 		نگاشت 
+	 		
+	 	\end{enumerate}
+	 \end{enumerate}
+	 $w = \frac{1}{z}$
+	 این نگاشت تناظری یک به یک بین نقاط غیر صفر صفحه 
+	 $z$
+	 و نقاط صفحه 
+	 $w$
+	 برقرار می‌کند با فرض
+	 $z = re^{i\theta}$
+	 $$w = \frac{1}{z}= \frac{1}{r} e^{-i\theta}$$
+	 
+	 \textbf{مثال:}
+	 نگاشت
+	 $\frac{1}{z}$
+	 هر دایره با خط راست را به یک دایره با خط راست تضویر می‌کند.
+	 \begin{equation}\label{eq1}
+	 	A(x^2+y^2) + Bx + Cy + D = 0
+	 \end{equation}
+	 
+	 $$w = u(x, y) + iv(x, y)$$
+	 با توجه به نگاشت 
+	 $w = \frac{1}{z}$
+	 داریم:
+	 $$z = \frac{1}{w} = \frac{1}{u + iv}=\frac{1 \times (u - iv)}{(u+iv)(u - iv)} = \frac{u - iv}{u^2+v^2} = x +iy$$
+	 $$x = \frac{u}{u^2 + v^2}\,,\, y = \frac{-v}{u^2 + v^2}$$
+	 در این صورت ب جایگذاری تساوی های فوق در 
+	 \ref{eq1}
+	 خواهیم داشت.
+	 $$D(u^2 + v^2) + Bu -Cu + A = 0$$
+	 که معادله کلی خط یا دایره در صفحه 
+	 $w$
+	 است.
+	 \chapter{انتگرال}
+	 \section{خم پیوسته یا کمان}
+	 شکل پارامتری یک خم پیوسته یا کمان به صورت 
+	 \[
+	 \begin{cases}
+	 	x = \varphi(t) \\
+	 	y = \psi(t) 
+	 \end{cases}
+ \qquad a \leq t \leq b
+	 \]
+	 می‌باشد که 
+	 $\varphi , \psi$
+	 در فاصله 
+	 $[a, b]$
+	 پیوسته هستند و با فرض پیوستگی 
+	 $\varphi$
+	 و
+	 $\psi$
+	 کمان
+	 $$z(t) = \varphi(t) + i\psi(t); \quad a \leq t \leq b$$
+	 منحنی پیوسته ای را تعریف می‌کند که در صفحه 
+	 $z$
+	 نقطه 
+	 $A = z(a)$
+	 را به نقطه
+	 $B = z(b)$
+	 وصل می‌کند.
+	 \textbf{مثال:}
+	 خط شکسته‌
+	 \[
+	 z(t) = 
+	 \begin{cases}
+	 	t + it \qquad 0\leq t\leq 1 \\
+	 	t + i \qquad 1\leq t \leq 2
+	 \end{cases}
+	 \]
+	 متشکل از پاره خطی که از 
+	 $0$
+	 تا 
+	 $1 + i$
+	 و به دنبال آن پاره‌خطی از 
+	 $1+i$
+	 تا
+	 $2 + i$
+	 یک خم پیوسته یا کمان است.
+	 \section{منحنی ساده}
+	 اگر منحنی پیوسته یا کمان
+	 $$z(t) = \varphi(t)+ i\psi(t);\quad a \leq t \leq b$$
+	 خودش را قطع نکند و یا خودش مماس نباشد.
+	 
+	 اگر 
+	 $t_1 \neq t_2$
+	 داشته باشیم
+	 $$z(t_1) \neq z(t_2)$$
+	 آن را منحنی ساده یا کمان جردن می‌نامیم.
+	 
+	 \textbf{مثال:}
+	 $z(t) = t + i\ln(1 + t) \qquad 0\leq t \leq 1$
+	 یک منحنی ساده یا کمان جردن است که 
+	 $A = z(0) = 1$
+	 را به نقطه
+	 $B = z(1) + 1 + i\ln 2 $
+	 وصل می‌کند.
+	 \section{کمان ساده هموار}
+	 خم پیوسته یا کمان 
+	 $z(t) = \varphi(t) + i\psi(t); \quad a \leq t \leq b$
+	 را کمان ساده هموار گوییم، هرگاه توابع 
+	 $\varphi, \psi$
+	 دارای مشتقات پیوسته در 
+	 $a \leq t \leq b$
+	 باشند.
+	 
+	 \textbf{مثال:}
+	 منحنی
+	 $z(t) = |t| + i \ln(1 + t) \quad  -\frac{1}{2} \leq t \leq \frac{1}{2}$
+	 کمان ساده هموار است.
+	 
+	 \textbf{مثال:}
+	 $z(t) = (t - \sin t) + i(1 - \cos t)\quad 0 \leq t \leq 2\pi$
+	 مکان ساده هموار است.
+	 \section{انتگرال خط}
+	 فرض کنید 
+	 $C$
+	 یک منحنی ساده-هموار باشد که به صورت
+	 $$z(t) = x(t) + i y(t) \qquad a \leq t \leq b$$
+	 نمایش داده شده باشد انتگرال 
+	 $f(z) = u(x, y) + i v(x, y)$
+	 روی 
+	 $C$
+	 را با -
+	 $$\int_{C} f(z) dz \quad or \quad \oint_{C} f(z) dz$$
+	 نمایش داد و آن را انتگرال خطی می‌نامیم و به صورت 
+	 $$\int_{C} f(z) dz = \int_{C} (u + iv)(dx + idy) = \int_{C}(u \, dx -v \, dy) + i\int (v \, dx + u \, dy)
+	 $$
+	 $$\text{یا}$$
+	 $$\int_{C} f(z) dz = \int_{C} f(z(t)) z'(t) \, dt = \int_{a}^{b} f(x(t) + i y(t))(x'(t) i y'(t)) dt$$
+	 
+	 $$x^2 + y^2 = 1 \rightarrow x =\mp \sqrt{1 - y^2}$$
+	 \[
+	 \begin{cases}
+	 	x = \cos \theta \\
+	 	y = \sin \theta
+	 \end{cases}
+ \qquad 0 \leq \theta \leq 2\pi
+	 \]
+	 \[
+	 \begin{cases}
+	 	y = y \\
+	 	x = \mp \sqrt{1 - y^2} \qquad -1 \leq y \leq 1
+	 \end{cases}
+	 \]
+	 \textbf{نکته:}
+	 اگر 
+	 $\gamma_1(t) , \gamma_2(t)$
+	 دو نوع نمایش پارامتری متفاوت برای فهم 
+	 $C$
+	 باشند آنگاه
+	 $$\int_{C} f(\gamma_1(t)) \gamma_1'(t) dt = \int_{C} f(\gamma_2(t)) \gamma_2'(t) dt$$ 
+	 یعنی مقدار انتگرال به نحوه پارامتری کردن خم 
+	 $C$
+	 بستگی ندارد.
+	 
+	 \textbf{مثال:}
+	 $$\int_{C} f(z) dz \qquad f(z)_ = x^2 + iy^3 \qquad (0,0) \rightarrow (1, 1), \quad C: y - x^2$$
+	 $$\int_{C} f(z) dz = \int_{0}{1} f(z(t)) z'(t) dt = \int_{0}^{1} = (t^2 + it^6)(1 + 2ti)dt = \int_{0}^{1} (t^2 - 2t^7 + i(2t^3 + t^6))dt$$
+	 $$=\frac{1}{12} + \frac{9}{14}i$$
+\end{document}
