@@ -1203,4 +1203,189 @@ y & x \\
 	 $$\int_{C} f(z) dz \qquad f(z)_ = x^2 + iy^3 \qquad (0,0) \rightarrow (1, 1), \quad C: y - x^2$$
 	 $$\int_{C} f(z) dz = \int_{0}{1} f(z(t)) z'(t) dt = \int_{0}^{1} = (t^2 + it^6)(1 + 2ti)dt = \int_{0}^{1} (t^2 - 2t^7 + i(2t^3 + t^6))dt$$
 	 $$=\frac{1}{12} + \frac{9}{14}i$$
+	 
+	 \section{کاربرد انتگرال خط}
+	 حاصل عبارت
+	 $Re \int_{C} \overline{f(z)} dz$
+	 را به عنوان مقدار کار انجام شده بوسیله نیروی
+	 $\vec{f} = \vec{u} + v \vec{i}$
+	 در مسیر 
+	 $C$
+	 تعبیر کرد که در آن 
+	 $\vec{f} = u - iv$
+	 مزدوج
+	 $f = u + iv$
+	است.
+	\textbf{مثال:}
+	کار انجام شده توسط نیروی
+	$\vec{F} = (x+y^2) \vec{i} + x^3 \vec{j}$
+	را در مسیر مستقیم از نقطه 
+	$A = (0, 0)$
+	تا نقطه 
+	$B=(1, 2)$
+	را بیابید.
+	\textbf{حل:}
+	معادله خط گذرنده از نقاط 
+	$A$
+	،
+	$B$
+	به صورت 
+	$y = 2x$
+	است.
+	$$z(t) = t + 2ti \,\,;\,\, 0 \leq t\leq 1$$
+	$$f(z) = x + y^2 + ix^3$$
+	$$\text{کار انجام شده} = Re\int_{C} \overline{f(z)} dz = Re\int_{0}^{1} \overline{f(z(t)) z'(t)} dt = Re\int_{0}^{1} (t + 4t^3 - it^3)(1 + 2i)dt$$
+	$$=Re(1 + 2i)\int_{0}^{1} (t + 4t^3 - it^3)dt =Re(1 + 2i)(\frac{1}{2} + \frac{4}{3} - \frac{1}{4} i) $$
+	$$Re(1 + 2i)(\frac{11}{6} - \frac{1}{2}i) = \frac{11}{6} + \frac{1}{2} = \frac{7}{3}$$
+	\newline
+	\textbf{مثال:}
+	نشان دهید
+	\[
+	\int_{C}(z - z_0)^n dz = 
+	\begin{cases}
+		0 \qquad n \neq -1\\
+		2\pi i \qquad n = -1
+	\end{cases}
+	\]
+	که 
+	$C$
+	 دایره
+	 $z - z_0 = re^{i\theta}$
+	 جهتی عکس عقربه های ساعت می‌باشد.
+	 \textbf{حل:}
+	 $\int_{C} (z-z_0)^n dz = \int_{C} (re^{i\theta})^n dz = r^n \int (e^{i\theta})^n dz = ir^{n+1} \int_{0}^{2\pi} e^{i(n+1)\theta} d\theta$
+	 
+	 $z = z_0 + re^{i\theta} \Rightarrow dz = ire^{i\theta}d\theta$
+	 $$\int_{C} (z-z_0)^n dz = ir^{n+1} \int_{0}^{2\pi} e^{i(n+1)\theta}d\theta = ir^{n+1}(\frac{1}{i(n+1)} e^{i(n+1)\theta})_{0}^{2\pi}=r^{n+1}(\frac{1}{(n+1)} e^{i(n+1)\theta})_{0}^{2\pi}$$
+	 
+	 \[
+	 \begin{cases}
+	 	2\pi \qquad n = -1\\
+	 	ir^{n+1}(\frac{1}{i(n+1)} e^{i(n+1)\theta})_{0}^{2\pi}\qquad n \neq -1
+	 \end{cases}
+	 \]
+	 \[
+	 \begin{cases}
+	 	2\pi i \qquad n = -1\\
+	 	0   \qquad n\neq -1
+	 \end{cases}
+	 \]
+	 $$e^{i(n+1)\theta} \big|_{0}^{2\pi} = \cos(2\pi(n+1)) + i\sin(2\pi(n+1)) = -e^0 = 0$$
+	 
+	 \section{دامنه همبند ساده}
+	 دامنه
+	 $D$
+	 را همبند ساده می‌گوییم هرگاه درون خم ساده بسته واقع در 
+	 $D$
+	 تماما در
+	 $D$
+	 باشد.
+	 $$D= \{x + iy|x, y \in \mathbb{Q}\}$$
+	 \newline
+	 \textbf{قضیه کشی-گورسا}
+	 اگر تابع
+	 $f(z)$
+	 در درون و روی مرز ساده بسته
+	 $C$
+	 تحلیلی باشد آنگاه
+	 $$\oint_{C} f(z) dz = 0$$
+	 
+	 \textbf{مثال:}
+	 $$\int_{|z| =1} \frac{e^z}{\cos z} = 0$$
+	 
+	 \textbf{نکته:}
+	 فرض کنید
+	 $f(z)$
+	 بر مرز 
+	 $C$
+	 که به درازای 
+	 $L$
+	 است پیوسته باشد و بر 
+	 $C$
+	 $|f(z)| < M$
+	 آنگاه 
+	 $$|\int_{C} f(z)dz| \leq \int_{C} |f(z) |dz| \leq M \qquad |dz| = ML$$
+	 
+	 \section{فرمول انتگرال کشی}
+	 فرض کنید تابع
+	 $f(z)$
+	 در دامنه همبند ساده که شامل مرز ساده 
+	 $C$
+	 است تحلیلی باشد اگر 
+	 $z_0$
+	 درون 
+	 $C$
+	 باشد آنگاه
+	 $$f(z_0) = \frac{1}{2\pi i} \int_{C} \frac{f(z)}{z - z_0} dz \Rightarrow \int_{C} \frac{f(z)}{z - z_0} = 2\pi i f(z_0)$$
+	 
+	 \textbf]{مثال:}
+	 انتگرال زیر را محاسبه کنید.
+	 $$\int_{|z| =1} \frac{\cosh z}{z^2 - 2z}\, dz$$
+	 
+	 $$\oint_{|z| = 1} \frac{\frac{\cosh z}{z - 2}}{z - 0} dz = 2\pi f(0) = 2\pi i \times (-\frac{1}{2}) = -\pi i$$
+	 $$f(z) = \frac{\cosh }{ z -2} \Rightarrow f(0) = \frac{1}{-2}$$
+	 
+	 \section{تعمیم فرمول انتگرال کشی}
+	 فرض کنید تابع
+	$f(0)$
+	در دامنه همبند ساده که شامل مرز ساده 
+	$c$
+	است، تحلیلی باشد اگر 
+	$z_0$
+	درون 
+	$c$
+	باشد آنگاه 
+	$f(z)$
+	در نقطه 
+	$z_0$
+	دارای مشتق از هر مرتبه ای است که تحلیلی اند و از رابطه زیر محاسبه می‌شود
+	$$\int_{C} \frac{f(z)}{(z - z_0)^{n+1}} = 2\pi i \frac{f^{(n)}(z_0)}{n!}$$
+	\textbf{مثال:}
+	اگر
+	$c$
+	دایره واحد
+	$|z| = 1$
+	باشد در جهت مثبت باشد و
+	$f(z) = \exp(2z)$
+	آنگاه
+	$\int_{C} \frac{\exp(2z)}{z^4} dz$
+	را محاسبه کنید.
+	$$\int_{C} \frac{\exp(2z)}{z^4} dz = \frac{2\pi i }{3!} f^{(3)}(0) = \frac{2\pi i }{3!} \times 8$$
+	$$f(z) = \exp(2z) \qquad
+	f'(z) = 2\exp(2z)\qquad
+	$$
+	$$f''(z) = 4\exp(2z)\qquad
+	f'''(z) = 8\exp(2z) \Rightarrow f'''(0) = 8$$
+	\newline
+	\textbf{مثال:}
+	حاصل انتگرال زیر را محاسبه کنید.
+	$$\int_{|z| =\frac{7}{2}} \frac{e^z}{(z - 3)(z+1)^2}\,dz$$
+	نقاط غیر تحلیلی
+	$z = -1, 3$
+	در داخل
+	$|z| =\frac{7}{2}$
+	قرار دارند.
+	$$\int_{C} \frac{e^z}{(z - 3)(z+1)^2}\, dz = \int_{C_1} \frac{e^z}{(z - 3)(z+1)^2}\, dz + \int_{C_2} \frac{e^z}{(z - 3)(z+1)^2}\, dz$$
+	$$\int \frac{e^z}{(z - 3)(z+1)^2}\, dz = \int_{C_1} \frac{\frac{e^z}{z - 3}}{(z+1)^2}\, dz +\int_{C_2} \frac{\frac{e^z}{(z+ 1)^2}}{(z-3)}\, dz = \frac{2\pi i}{1!} f'(-1) + 2\pi i g(3)$$
+	$$f(z) = \frac{e^z}{z - 3} \Rightarrow f'(z) = \frac{e^z(z - 3) - e^z}{(z - 3)^2} \Rightarrow f'(-1) = \frac{\frac{1}{e}(-4) - \frac{1}{e}}{16} = -\frac{5}{16e}$$
+	$$g(z) = \frac{e^z}{(z + 1)^2} \Rightarrow g(3) = \frac{e^3}{16}$$
+	$$\int_{C} \frac{e^z}{(z - 3)(z+1)^2}\, dz = 2\pi i(-\frac{5}{16e} + \frac{e^3}{16})$$
+	
+	\textbf{قضیه  مررآ(عکس قضیه کشی-گورسا)}
+	
+	فرض کنید
+	$f'(z)$
+	در دامنه 
+	$D$
+	پیوسته باشد اگر بر هر مرز ساده بسته 
+	$c$
+	درون 
+	$D$
+	،
+	$\oint_{C} f(z) dz = 0$
+	،
+	$f(z)$
+	در 
+	$D$
+	تحلیلی است.
 \end{document}
