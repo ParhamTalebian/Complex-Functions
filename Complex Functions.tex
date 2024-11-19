@@ -25,6 +25,7 @@
 	\date{\today}
 	\maketitle
 	
+	
 
 	\tableofcontents
 	\chapter{یادآوری}
@@ -55,17 +56,17 @@
 	\begin{enumerate}
 		\item 
 		هر دو عدد مختلط یک زوج مرتب 
-		$Z=(x, y)$
+		$z=(x, y)$
 		می‌باشد که
-		$$x = Re(Z) \qquad y = Im(z)$$
+		$$x = Re(z) \qquad y = Im(z)$$
 		\item
 		برای هر عدد مختلط
-		$Z = (x, y)$
-		قدرمطلق Z به صورت زیر تعریف می‌شود
-		$$|Z| = \sqrt{x^2+y^2}$$
+		$z = (x, y)$
+		قدرمطلق z به صورت زیر تعریف می‌شود
+		$$|z| = \sqrt{x^2+y^2}$$
 		\item
 		مزدوج عدد مختلط 
-		$Z=(x, y)$
+		$z=(x, y)$
 		،
 		$\bar{z}$
 		به صورت زیر تعریف می‌شود
@@ -221,7 +222,7 @@ y & x \\
 	 $e^{iz} = \cos z + i \sin z$
 	 
 	 نمایش قطبی اعداد مختلط:
-	 $$z = x +iy = |z|(\cos (Arg z) + i sin(Arg z)) = r (\cos ]\theta + i \sin \theta) = |z|e^{iArg z} = re^{i\theta}$$
+	 $$z = x +iy = |z|(\cos (Arg z) + i sin(Arg z)) = r (\cos \theta + i \sin \theta) = |z|e^{iArg z} = re^{i\theta}$$
 	 
 	 \subsection{توان عدد مختلط}
 	 برای عدد مختلط غیر صفر
@@ -1339,7 +1340,7 @@ y & x \\
 	در نقطه 
 	$z_0$
 	دارای مشتق از هر مرتبه ای است که تحلیلی اند و از رابطه زیر محاسبه می‌شود
-	$$\int_{C} \frac{f(z)}{(z - z_0)^{n+1}} = 2\pi i \frac{f^{(n)}(z_0)}{n!}$$
+	$$\int_{C} \frac{f(z)}{(z - z_0)^{n+1}} dz = 2\pi i \frac{f^{(n)}(z_0)}{n!}$$
 	\textbf{مثال:}
 	اگر
 	$c$
@@ -1388,4 +1389,694 @@ y & x \\
 	در 
 	$D$
 	تحلیلی است.
+	
+	\section{نامساوی کشی}
+	فرض کنید
+	$C$
+	دایره 
+	$|z - z_0| = r$
+	و 
+	$M$
+	یک کران بالای 
+	$|f(z)|$
+	یعنی 
+	$|f(z)| \leq M$
+	$$|f^{(n)}(z_0) \leq \frac{Mn!}{r^n} \quad ;\quad n = 0, 1,2 \dots $$
+	
+	\textbf{اثبات:}
+	$$f^{(n)}(z_0) =\frac{n!}{2\pi i} \oint_{C} \frac{f(z)}{(z - z_0)^{n+1}}dz \Rightarrow |f^{(n)}(z_0)| =\frac{n!}{2\pi} |\frac{f(z)}{(z - z_0)^{n+1}}dz|$$
+	$$\leq\frac{n!}{2\pi} \frac{|f(z)|}{|(z - z_0)^{n+1}|}dz \leq \frac{n!}{2\pi} \frac{M}{r^{n+1}}\oint dz = \frac{n!}{2\pi} \frac{M}{r^{n+1}} 2\pi(r) = n! \times \frac{M}{r^n}$$
+	\newline
+	\textbf{قضیه لیوویل:}
+	اگر تابع
+	$f(z)$
+	تحلیلی و 
+	$|f(z)| \leq M$
+	آن‌گاه تابع 
+	$f(z)$
+	تابع ثابت است.
+	\textbf{قصیه معادله چندجمله ای}
+	$$a_nz^n + a_{n -1}z ^{n-1} + \dots + a_1z + a_0 = 0 \,\,, \,\,a_n \neq 0$$
+	دقیقا 
+	$n$
+	ریشه دارد در 
+	$\mathbb{C}$
+	\newline
+	\textbf{قضیه مقدار میانگین گاس:}
+	اگر 
+	$f(z)$
+	در داخل و روی مرز دایره
+	$C :|z - a| = r$
+	تحلیلی باشد آن‌گاه
+	$f(a)$
+	میانگین مقدار 
+	$f(z)$
+	روی 
+	$C$
+	خواهد بود یعنی
+	$$2\pi \times f(a) = \int_{0}^{2\pi} f(a + re^{i\theta})d\theta$$
+	\newline
+	\textbf{مثال:}
+	انتگرال زیر را محاسبه کنید.
+	$$\int_{0}^{2\pi} \cos^2(\frac{\pi}{6} + 2e^{i\theta})d\theta=\frac{3}{4} \times 2\pi = \frac{3\pi}{2}$$
+	$$f(z) = \cos^2(z) \Rightarrow \cos^2(\frac{\pi}{6}) = \frac{3}{4}$$
+	
+	\textbf{قضیه ماکزیمم توابع}
+	
+	اگر تابع
+	$f(z)$
+	را در دامنه کراندار
+	$D$
+	تحلیلی و غیر ثابت باشد و بر بستار آن یعنی
+	$\overline{D}$
+	پیوسته باشد آن‌گاه
+	$|f(z)|$
+	مقدار ماکزیمم خود را روی مرز اختیار می‌کند.
+	\newline
+	\textbf{قضیه مینیمم تابع}
+	
+	اگر تابع 
+	$f(z)$
+	در دامنه کراندار
+	$D$
+	تحلیلی و بر 
+	$z \in D$
+	داشته باشیم
+	$f(z) \neq 0$
+	همچنین بستار آن یعنی
+	$\overline{D}$
+	پیوسته و 
+	$\overline{D}$
+	فشرده باشد آن‌گاه
+	$|f(z)|$
+	مقدار مینیمم خود را در مرز اختیار می‌کند.
+	\newline
+	\textbf{مثال:}
+	مقدار ماکزیمم و مینیمم 
+	$|f(z)|$
+	با تعریف 
+	$f(z) = e^z$
+	را روی 
+	$|z| = r$
+	با 
+	$r > 0$
+	پیدا کنید.
+	
+	طبق قضیه 
+	$\min$
+	و 
+	$\max$
+	توابع مختلط
+	$\min$
+	و 
+	$\max$
+	بر نقاط مرزی دامنه اتفاق می‌افتد.
+	$$|e^z| = |e^{x + iy}| = |e^x||e^{iy}| = e^x|\cos y + i\sin y| = e^x$$
+	تابع 
+	$e^x$
+	بر 
+	$[-r, r]$
+	صعودی است لذا
+	$e^{-r} < e^r$
+	پس
+	$$\min_{|z| = r} |e^z| = \min e^x = e^{-r}$$
+	$$\max_{|z| = r} |e^z| = \max e^x = e^{r}$$
+	------------------- امتحان میان تریم تا اینجا------------------------------------------
+	\chapter{دنباله و سری های مختلط}
+	
+	\textbf{تعریف دنباله:}
+	تابعی مختلط است که دامنه آن اعداد مختلط طبیعی و بر آن مجموعه غیر تهی مختلط است
+	$$ \underset{n \to f(n) = z_n}{f: \mathbb{N} \to \mathbb{C}}$$
+	مقادیر برد را با 
+	$z_n$
+	یا به طور خلاصه 
+	$\{z_n\}_{n =1}^{+\infty}$
+	نمایش می‌دهیم.
+	
+	دنباله 
+	$\{z_n\}$
+	را همگرا می‌گوییم هرگاه
+	$$\lim_{n \to +\infty} z_n = C$$
+	$$\forall \epsilon > 0 \quad\exists N \forall n(n > N \Rightarrow |z_n - c| < \epsilon)$$
+	\newline
+	
+	\textbf{قضیه:}
+	دنباله‌ی
+	$\{z_n\} = \{x_n + i y_n\}_{n  = 1}^{\infty}$
+	را همگرا به 
+	$z = a + ib$
+	گوییم هرگاه دنباله های متشکل از قسمت های حقیقی
+	$\{x_n\}$
+	و
+	$\{y_n\}$
+	موهومی به ترتیب به
+	$a$
+	و
+	$b$
+	همگرا باشند
+	\newline
+	
+	\textbf{مثال:}
+	همگرایی دنباله
+	$z_n = s : n (\frac{1}{n}) + i(-1)^n$
+	را بررسی کنید.
+	
+	همگرا نیست زیرا
+	$(-1)^n$
+	در 
+	$n \to \infty$
+	همگرا نسیت.
+	\newline
+	
+	\textbf{مثال:}
+	همگرایی دنباله 
+	$z_n = \frac{1}{n^3} + i$
+	را بررسی کنید.
+	$$\lim_{z \to \infty} \frac{1}{n^3} = 0 \quad , \lim_{z \to \infty} 1 = 1 \Rightarrow z_n \to i$$
+	\newline
+	
+	\textbf{تعریف:}
+	سری نامتناهی
+	$\Sigma z_n = z_1 + z_2 +\dots + z_n + \dots$
+	از اعداد مختلط است اگر دنباله‌ی
+	$s_n = \Sigma_{k = 1} z_k =z_1 + z_2 +\dots + z_n $
+	از مجموع های جزئی به 
+	$s$
+	همگرا باشد. در این صورت می‌نویسیم
+	$$\Sigma_{k = 1}^{\infty} z_n = s$$
+	\newline
+	
+	\textbf{مثال:}
+	سری هندسی 
+	$\Sigma z^n = 1 + z^1 + z^2 + \dots + z^n + \dots$
+	را بدست آورید.
+	$$\Sigma_{n = 0}^{\infty} z^n = \frac{1}{1  -z} \qquad (|z| < 1)$$
+	$$\Sigma_{n = 0}^{\infty} (-z)^n  = \frac{1}{1  +z} \qquad (|z| < 1)$$
+	\newline
+	
+	\textbf{مثال:}
+	$$\Sigma_{n = 0}^{\infty} z^{2n} = ? \Rightarrow \Sigma_{n = 0}^{\infty} z^{2n} = \frac{1}{1 - z^2} \quad (|z| < 1 \, or \, |z^2| < 1)$$
+	\newline
+	
+	\textbf{دنباله توابع:}
+	فرض کنید
+	$f_1(z), f_2(z) , \dots$
+	که به طور خلاصه به صورت
+	$f(z)$
+	نمایش داده می‌شوند دنباله‌ای از توابع تک مقداری تعریف شده بر حسب 
+	$z$
+	در ناحیه مشخص از صفحه‌ی مختلط باشد.
+	\newline
+	
+	\textbf{تعریف:}
+	تابع
+	$F(z)$
+	واحد
+	$\{f_n\}$
+	می‌نامیم و می‌نویسیم
+	$\lim_{n \to \infty} f_n(z) = F(z)$
+	هرگاه
+	$$pointwise: \forall \epsilon > 0 \quad \exists N(\epsilon, z) \,;\, \forall n(n > N(\epsilon, z)\Rightarrow |f_n(z) - F(z)| < \epsilon)$$
+	در بعضی مقدار 
+	$N$
+	با تغییر
+	$\epsilon$
+	و
+	$z$
+	تغییر خواهد کرد.
+	\newline
+	
+	\textbf{تعریف:}
+	همگرایی یکنواخت: دنباله توابع
+	$\{f_n(z)\}$
+	به 
+	$f(z)$
+	به طور یکنواخت همگراست هرگاه
+	
+	$$uniformly  : \forall \epsilon > 0 \quad \exists N(\epsilon) \, ;\, \forall z \,,\,\forall n (n > N(\epsilon) \Rightarrow |f_n(z) - f(z)| < \epsilon)$$
+	\newline
+	
+	\textbf{مثال:}
+	$$f_n(z) = \frac{1}{nz} \quad z \neq (0, 0)$$
+	$$f_n(z) \overset{P.W}{\rightarrow} 0 \quad |z|<1$$
+	طبق خاصیت ارشمیدسی
+	$\exists N$
+	بطوریکه
+	$\frac{1}{N} < \epsilon$
+	برای هر 
+	$n \geq N$
+	و هر
+	$|z|> 1$
+	داریم:
+	$$|f_n(z) - f(z)| = |\frac{1}{nz} - 0| = |\frac{1}{nz}| = \frac{1}{n}\frac{1}{|z|} \leq \frac{1}{n} \leq \frac{1}{N} < \epsilon$$
+	\newline
+	
+	\textbf{قضیه:}
+	اگر
+	$\Sigma_{n = 0}^{\infty}M_n$
+	همگرا باشد آن‌گاه
+	$\Sigma_{n = 0}^{\infty}f_n(z)$
+	همگرای یکن.اخت روی
+	$D$
+	است.
+	\newline
+	
+	\textbf{قضیه:}
+	اگر
+	$\Sigma_{n = 0}^{\infty}f_n(z)$
+	در ناحیه 
+	$D$
+همگرای یکینواخت به تابع
+$f(z)$
+باشد در این ناحیه تمام توابع
+$f_n(z)$
+پیوسته باشند و منحنی 
+$c$
+در 
+$D$
+واقع باشد آن‌گاه داریم:
+$$\int_{c} \Sigma_{n = 0}^{\infty}f_n(z) dz = \Sigma_{n = 0}^{\infty} \int\}_{n  = 1}  f_n(z) dz \quad (z \in D)$$
+\newline
+
+\textbf{مثال:}
+	با انتگرال گیری از سری زیر روی منحنی 
+	$c$
+	از
+	$t = 0$
+	تا
+	$t = z$
+	نتیجه را بیان کنید.
+	$$ \Sigma_{n = 0}^{\infty} t^n = \frac{1}{1 - t} \quad |t| < 1$$
+	
+	سمت چپ:
+	$$\int_{0}^{z} \frac{1}{1 - t} dt=\ln (1 - t) |_{0}^{z} = - \ln (1 - z)$$
+	\newline
+	
+	سمت راست:
+	$$\int \Sigma_{n = 0}^{\infty} t^n dt = \Sigma_{n = 0}^{\infty} \int_{0}^{z} t^n dt = \Sigma_{n = 0}^{\infty} (\frac{t^{n + 1}}{n+1})|_{0}^{z} =\Sigma_{n = 0}^{\infty} (\frac{z^{n + 1}}{n+1}) = \Sigma_{n = 0}^{\infty} \frac{z^n}{n} $$
+	\newline
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\textbf{قضیه:}
+	اگر 
+	$\Sigma_{n = 1}^{+\infty} f_n(z)$
+	در ناحیه 
+	$\mathbb{R}$
+	همگرای یکنواخت تابع 
+	$f(z)$
+	باشد و در این ناحیه تمام توابع
+	$f_n(z)$
+	تحلیلی باشند. آنگاه در هر نقطه داخل
+	$z \in \mathbb{R}$
+	،
+	داریم:
+	$$\frac{df(z)}{dz} = \Sigma_{n = 1}^{+\infty}\frac{df_n(z)}{dz} ; z \in \mathbb{R}$$
+	
+	\textbf{مثال:}
+	با مشتق گیری از سری 
+	$\Sigma_{n = 1}^{+\infty} z^n = \frac{1}{1 - z}$
+	در دامنه 
+	$|z|<1$
+	نتیجه زا بیان کنید.
+	
+	$$\frac{d}{dz} \Sigma_{n = 1}^{+\infty} n z^{n - 1} ; |z|< 1$$
+	$$\frac{d}{dz} \frac{1}{1 - z} = \frac{1}{(1 - z)^2} \Rightarrow \Sigma_{n = 1}^{+\infty} n z^{n - 1} = \frac{1}{(1 - z)^2} \qquad |z|<1$$
+	\newline
+	
+	\textbf{قضیه:}
+	آزمون های همگرایی سری های مختلط
+	\begin{enumerate}
+		\item 
+		آزمون نسبت اگر 
+		$\lim_{n \to +\infty} |\frac{f_{n +1} (z)}{f_n(z)}| = L$
+		
+		اگر 
+		$L < 1$
+		,آن‌گاه
+		$\Sigma_{n = 1}^{+\infty} f_n(z)$
+		همگراست
+		
+		اگر 
+		$L>1$
+		آن‌گاه سری فوق واگراست.
+		\item
+		آزمون ریشه.اگر
+		$$\lim_{n \to +\infty} |f_n(z)|^{\frac{1}{n}}= L$$
+		اگر
+		$L<1$
+		سری فوق همگراست.
+		
+		اگر
+		$L < 1$
+		سری واگراست.
+		\item
+		آزمون مقایسه اگر برای 
+		$n > N$
+		داشته باشیم
+		$|g_n(z)| > |f_n(z)|$
+		و
+		$\Sigma_{n = 1}^{+\infty} g_n(z)$
+		همگرا باشد آن‌گاه
+		$\Sigma_{n = 1}^{+\infty} f_n(z)$
+		همگراست و اگر
+		$\Sigma_{n = 1}^{+\infty} g_n(z)$
+		واگرا شود آنگاه
+		$\Sigma_{n = 1}^{+\infty} g_n(z)$
+		واگراست.
+		\item
+		آزمون رابه :‌اگر داشته باشیم 
+		$$\lim_{n \to +\infty} n |1  - \frac{f_{n +1} (z)}{f_n(z)}| = L$$
+		اگر
+		$L<1$
+		آن‌گاه سری
+		$\Sigma_{n = 1}^{+\infty}$
+		واگراست
+	
+		اگر 
+		$L > 1$
+		سری فوق همگراست.
+
+	\end{enumerate}
+	
+
+\textbf{مثال:}
+ناحیه همگرایی
+$\Sigma_{n = 0}^{+\infty} \frac{z^n}{n!}$
+را تعیین کنید.
+$$\lim_{n \to +\infty} |\frac{f_{n +1} (z)}{f_n(z)}| = \lim_{n \to +\infty} |\frac{\frac{z^{n +1}}{(n+ 1)!}}{\frac{z^n}{n!}}| = \lim_{n \to +\infty} |\frac{z}{n+1}| = 0 < 1$$ 
+پس ناجیه همگرایی صفجه مختلط است.
+\newline
+
+\textbf{مثال:}
+ناحیه همگرایی
+$\Sigma_{n = 0}^{+\infty} ne^{-nz^2}$
+را تعیین کنید.
+$$\lim_{n \to +\infty} (|ne^{-nz^2}|)^{\frac{1}{n}} = \lim_{n \to +\infty} n^{\frac{1}{n}}|e^{-nz^2}|^{\frac{1}{n}} = \lim_{n \to +\infty} |e^{-z^2}| = |e^{-z^2}| = |e^{-(x + iy)^2}| = e^{y^2 - x^2} < 1$$
+
+
+
+
+\section{سری توانی}
+یک سری به فرم 
+$\Sigma_{n = 0}^{+\infty} a_n(z - z_0)^n$
+سری توانی
+$zz_0$
+نامیده می‌شود.
+با استفاده از آزمون نسبت تعریف می‌کنیم
+$$R = \lim_{n \to +\infty} |\frac{a_n}{a_{n+1}}|$$
+که 
+$R$
+شعاع همگرایی نامیده می‌شود.
+در این صورت اگر
+$|z - z_0|<R$
+آن‌گاه سری توانی همگرای یکنواخت است و اگر 
+$|z - z_0|>R$
+آن‌گاه سری واگراست و برای
+$|z - z_0| = R$
+باید بررسی شود و آزمون نسبت جواب نمی‌دهد
+
+\section{سری تیلور}
+فرض کنید
+$f(z)$
+در دامنه 
+$D$
+تحلیلی و مرز
+$D$
+،
+$c$
+است.
+اگر
+$z_0 \in D$
+آن‌گاه نمایش دیگری برای
+$f(z)$
+به صورت زیر می‌باشد.
+$$f(z) = \Sigma_{n = 0}^{+\infty} a_n(z - z_0)^n$$
+$$a_n = \frac{1}{2\pi i} \int_{c} \frac{f(z)}{(z - z_0)^{n + 1}}dz = \frac{2\pi i }{2\pi i} \frac{f^(n)(z_0)}{n!} = \frac{f^(n)(z_0)}{n!} \quad n = 1, 2, \dots$$
+\newline
+
+\textbf{مثال:}
+تابع
+$f(z) = \frac{1}{1 - z}$
+برای
+$z \neq 1$
+نمایش سری تیلور حول
+$z = z_0 \neq 1$
+به صورت زیر است
+$$f(z) = \Sigma_{n = 0}^{+\infty} \frac{f^{(2n)}(z_0)}{n!}(z - z_0)^n$$
+برای وقتی که 
+$|z - z_0| < |1 - z_0|$
+برقرار است.
+\section{سری مکلورن}
+اگر مقدار
+$z_0$
+در سری تیلور برابر صفر باشد، سری را مکلورن می‌نامیم.
+\section{نمایش سری مکلورن توابع خاص}
+\begin{enumerate}
+	
+	\item
+	$$e^z = 1 +z + \frac{z^2}{2!} + \dots = \Sigma_{n = 0}^{\infty} \frac{z^n}{n!} \quad |z|< \infty$$
+	\item
+	$$\sin z = z - \frac{z^3}{3!} +  \frac{z^5}{5!} - \dots = \Sigma_{n = 0}^{\infty} (-1)^{n -1 } = \frac{z^{2n - 1}}{(2n - 1)!}\qquad |z| < \infty$$
+	\item
+	$$\cos z = 1 - \frac{z^2}{2!} +  \frac{z^4}{4!} - \dots = \Sigma_{n = 0}^{\infty} (-1)^{n } = \frac{z^{2n }}{(2n)!}\qquad |z| < \infty$$
+	\item
+	$$\ln (1 + z) = z - \frac{z^2}{2} + \frac{z^3}{3} - \frac{z^4}{4} + \dots = \Sigma_{n = 0}^{\infty} (-1)^{n +1} = \frac{z^{n }}{n}\qquad |z| < 1$$
+	
+	
+\end{enumerate}
+\section{تکین ها}
+نقطه
+$z_0$
+را تکین تابع
+$f(z)$
+گوییم هرگاه در 
+$z_0$
+تحلیلی باشد و در نقطه‌ای از همسایگی
+$z_0$
+تحلیلی باشد.
+\newline
+
+\textbf{مثال:}
+$z = 0$
+برای تابع
+$f(z) = \frac{1}{z}$
+تکین است.
+
+
+
+
+
+
+
+
+
+\section{تکین تنها}
+نقطه
+$z_0$
+را تکین تنهای تابع 
+$f(z)$
+گوییم هرگاه
+$z_0$
+تکین باشد و همسایگی محذوفی از
+$z_0$
+وجود داشته باشد به طوریکه
+$f(z)$
+در سرتاسر این همسایگی تحلیلی باشد.
+\section{تکین غیر تنها}
+نقطه
+$z_0$
+را تکین تنهای تابع
+$f(z)$
+گوییم هرگاه هر همسایگی 
+$z_0$
+شامل نقطه تکین دیگری غیر از 
+$z_0$
+باشد.
+\section{تکین غیر تنها از نوع انباشتگی}
+نقطه 
+$z_0$
+را تکین غیر تنها از نوع انباشتگی تابع 
+$f(z)$
+گوییم هرگاه دنباله ای از نقاط تکین مانند
+$\{z_n\}$
+وجود داشته باشد به طوریکه 
+$\lim_{n \to \infty} z_n = z_0$
+\newline
+
+\textbf{مثال:}
+تابع
+ $\frac{1}{z}$
+ نقطه تکین 
+ $z = 0$
+ که از نوع نکین تنهاست.
+
+\textbf{مثال:}
+$$f(z) = \frac{z + 1}{z^3(z^2 + 1)} \quad z =0 , z = i, z = -i$$
+
+
+\textbf{مثال:}
+$$f(z) = \frac{1}{\sin (\frac{\pi}{z})} e^{(\tan \frac{1}{z})}$$
+$$z  = \frac{1}{n} \quad ; \quad z = 0 \quad n \in \mathbb{N}$$
+$z = 0$
+نقطه تکین غیر تنهاست
+$$\forall r > 0 \quad ; \quad 0<|z|< r$$
+$$\exists n_0 \in \mathbb{N} \quad ;\quad \frac{1}{n_0} < r$$
+و از طرفی
+$\frac{1}{n_0}$
+نقطه تکین تنها متمایز از صفر است پس 
+$z = 0$
+تکین غیر تنها است.
+از طرفی نقاط
+$z = \frac{1}{n}$
+که 
+$n \in \mathbb{N}$
+است نقاط تکین تنها می‌باشند.
+\section{سری لوران}
+اگر تابع
+$f(z)$
+در نقطه 
+$z = z_0$
+دارای تکین تنها باشد آن‌گاه در همسایگی 
+$z_0$
+،
+تابع دارای سری لوران است فرض کنید
+$f(z)$
+در داخل طوقه 
+$r_1<|z- z_0| < r_2$
+تحلیلی باشد در این صورت نمایش 
+$f(z)$
+به صورت زیر است
+
+
+$$f(z) = \Sigma_{n = 0}^{\infty} a_n(z- z_0)^n(\text{قسمت تحلیلی}) +\Sigma_{n = 1}^{\infty} b_n(z- z_0)^{-n} = \Sigma_{-\infty}^{\infty} c_n‌(z- z_0)^{n}$$
+\newline
+
+\textbf{مثال:}
+تابع:
+$$a_n = \frac{1}{2\pi i} \int_{c} \frac{f(z)}{(z_z_0)^{n+1}}$$
+$$b_n = \frac{1}{2\pi i} \int_{c} \frac{f(z)}{(z_z_0)^{1 - n}}$$
+$$c_n = \frac{1}{2\pi i} \int_{c} \frac{f(z)}{(z_z_0)^{n+1}}$$
+\newline
+
+\textbf{نکته:}
+$$\oint_{c} f(z) dz = \int \Sigma_{n = 0}^{\infty} a_n(z- z_0)^n dz + \int \Sigma_{n = 1}^{\infty} b_n(z- z_0)^{-n} dz = 2\pi i b_1$$
+$$Res f(z) = b_1 \quad z = 0 \quad$$
+$b_1$
+را مانده 
+$f(z)$
+در
+$z = z_0$
+می‌نامیم.
+\newline
+
+\textbf{مثال:}
+سری لوران تابع 
+$f(z) = \frac{1}{z(z - 1) (z- 2)}$
+حول 
+$z = 0$
+در دامنه 
+$1 < |z|< 2$
+بنویسید.
+$$f(z) = \frac{1}{2z} + \frac{1}{1 - z} + \frac{1}{2(z - 2)}$$
+$$\frac{1}{1 - z} = - \frac{1}{z} \frac{1}{1 - \frac{1}{z}} = -\frac{1}{z} = \Sigma_{n = 0}^{\infty} 
+\frac{1}{z^n}$$
+$$\frac{1}{2(z - 2)} = -\frac{1}{4} \frac{1}{1 - \frac{z}{2}} = - \frac{1}{4} \Sigma_{n = 0}^{\infty} (\frac{z}{2})^n$$
+در نهایت
+$$f(z) = \frac{1}{2z}  -\frac{1}{z} \frac{1}{1 - \frac{1}{z}}-\frac{1}{4} \frac{1}{1 - \frac{z}{2}} = \frac{1}{2z} - \frac{1}{z} \Sigma_{n = 0}^{\infty} \frac{1}{z^n} - \frac{1}{4}\Sigma_{n = 0}^{\infty} (\frac{z}{2})^n$$
+\newline
+
+\textbf{مثال:}
+تابع
+$f(z) = \frac{1}{(z+ 1)(z+ 3)}$
+را به یک سری لوران در ناحیه 
+$0< |z+ 1|< 2$
+بسط دهید.
+\textbf{حل:}
+فرض کنید
+$z + 1 = u$
+;
+$0<|u|<2$
+$$f(z) = \frac{1}{(z+ 1)(z+3)} = \frac{1}{u(u + 2)} = \frac{1}{2u(\frac{u}{2} + 1)} = \frac{1}{2u} \Sigma_{n = 0}^{\infty} (-1)^n(\frac{u}{2})^n$$
+\textbf{نکته:}
+چون
+$|u|< 2$
+پس
+$|\frac{u}{2}|< 1$
+پس سری هندسی زسر همگراست.
+$$\frac{1}{1 + \frac{u}{2}} = \Sigma_{n = 0}^{\infty} (-1)^n(\frac{u}{2})^n$$
+پس
+$$f(z) = \frac{1}{2u}\Sigma_{n = 0}(-1)^n(\frac{u}{2})^n = \frac{1}{2u} + \Sigma_{n = 0}(-1)^n(\frac{u^{n - 1}}{2^{n+1}}) = $$
+$$\frac{1}{2(z+ 1)} + \Sigma_{n = 0}^{\infty} (-1)^n \frac{(z+ 1)^{n - 1}}{2^{n + 1}}$$
+
+\section{انواع نقاط تکین تنها}
+\begin{enumerate}
+	\item
+	نقطه تکین برداشتنی: اگر بخش اصلی بسط سری لوران تابع
+	$f(z)$
+	برابر باشد، تکین را برداشتنی گوییم.
+	\item
+	قطب: اگر بخش اصلی بسط سری لوران تابع
+	$f(z)$
+	از تعداد نامتناهی جمله تشکیل شده باشد آن‌گاه تکین را قطب می‌نامیم. توان آخرین جمله 
+	(مثلا
+	$m$
+	)
+	را مرتبه قطب می‌نامیم اگر 
+	$m = 1$
+	آن‌گاه قطب را ساده می‌گوییم.
+	$$f(z) = \Sigma_{n = 0}^{+\infty} a_n(z - z_0)^n + \Sigma_{n = 1}^{m} b_n (z - z_0)^{-n}$$
+	$$(z - z_0)^m f(z) = \Sigma_{n = 0}^{\infty} a_n(z - z_0)^{n+ m} + \Sigma_{n = 1}^{m} b_n (z - z_0)^{m-n}$$
+	با 
+	$m - 1$
+	مشتق گیری از طرفین و سپس بررسی حد در طرف تساوی وقتی
+	$z \to z_0$
+	خواهیم داشت:
+	$$b_1 = \frac{1}{(m - 1)!} \lim_{z \to z_0} \frac{d^{m - 1}}{d z^{m - 1}}(z - z_0)^m f(z) = Res_{z = z_0}(f(z))$$
+	
+	\item
+	تکین اساسی: اگر بخش اصلی بسط سری لوران تابع
+	$f(z)$
+	دارای  تعداد نامتناهی جمله باشد تکین را اساسی گوییم.
+	
+	
+\end{enumerate}
+\newline
+
+\textbf{مثال}
+\begin{enumerate}
+	\item 
+	تابع
+	$$f(z) = \frac{\sin z}{z} = \frac{1}{z}(z - \frac{1}{3!} z^3 + \frac{z^5}{5!} + \dots) = (1 -\frac{1}{3!} z^2 + \frac{z^4}{5!} + \dots)$$
+	پس 
+	$z = 0$
+	تکین تنها از نوع برداشتنی است.
+	\item
+	تابع
+	$$f(z) = \frac{\sin z}{z^2} = \frac{1}{z^2}(z - \frac{1}{3!} z^3 + \frac{z^5}{5!} + \dots) = (\frac{\sin z}{z} -\frac{1}{3!} z + \frac{z^3}{5!} + \dots)$$
+	\item
+	تابع
+	$$e^{\frac{1}{z}}$$
+	
+	
+\end{enumerate}
 \end{document}
