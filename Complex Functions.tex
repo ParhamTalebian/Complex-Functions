@@ -89,7 +89,7 @@
 		تقسیم
 		$\frac{z_1}{z_2}$
 		به صورت زیر است
-		$$\frac{z_1}{z_2} = \frac{z_1\bar{z_2}}{z_2\bar{z_2}} = \frac{z_1\bar{z_2}}{|z_2|^2} = (\frac{x_1x_2+y_1y_2}{x_2^2+y_2^2}, \frac{x_2y_1 - x_1y_2}{x_1^2+x_2^2})$$
+		$$\frac{z_1}{z_2} = \frac{z_1\bar{z_2}}{z_2\bar{z_2}} = \frac{z_1\bar{z_2}}{|z_2|^2} = (\frac{x_1x_2+y_1y_2}{x_2^2+y_2^2}, \frac{x_2y_1 - x_1y_2}{x_1^2+y_2^2})$$
 	\end{enumerate}
 	
 	بین اعداد مختلط و زیر مجموعه ماتریس ها تناظر یک به یک به صورت زیر برقرار است.
@@ -438,6 +438,8 @@ y & x \\
 	 	 	 	  نزدیک شود در صورت وجود حد
 	 	 	 	  ،
 	 	 	 	  حاصل تمامی حدود باهم برابر هستند.
+	 	 	 	  \newline
+	 	 	 	  
 	 	 	 	  \textbf{مثال:}
 	 	 	 	  ثابت کنید نگاشت 
 	 	 	 	  $f(z) = Arg z$
@@ -449,7 +451,7 @@ y & x \\
 	 	 	 	  
 	 	 	 	  $$z_n = z_0 + \frac{i}{n} \quad ; \quad z' = z  - \frac{i}{n}$$
 	 	 	 	  $$f(z_n) = Arg(z_n) = \arctan(\frac{1}{nz_0}) = n$$
-	 	 	 	  $$f(z'_n) = Arg(Z_n') =\arctan(\frac{-1}{nz_0}) = -\arctan(\frac{1}{nz_0}) = -n$$	
+	 	 	 	  $$f(z'_n) = Arg(z_n') =\arctan(\frac{-1}{nz_0}) = -\arctan(\frac{1}{nz_0}) = -n$$	
 	 	 	 	  
 	 	 	 	  \section{پیوستگی}
 	 	 	 	  تابع 
@@ -480,7 +482,7 @@ y & x \\
 	 	 	 	  	روش دوم(قطبی):
 	 	 	 	  	
 	 	 	 	  	$$x = r\cos \theta , y = r\sin \theta$$
-	 	 	 	  	$$\lim_{z \to (0,0)} f(z) = \lim_{r \to 0} \frac{r(\cos \theta - i\sin)}{r(\cos \theta + i \sin \theta)} = \lim_{r \to 0} \frac{(\cos \theta - i\sin)}{(\cos \theta + i \sin \theta)} = \frac{(\cos \theta - i\sin)}{(\cos \theta + i \sin \theta)}$$
+	 	 	 	  	$$\lim_{z \to (0,0)} f(z) = \lim_{r \to 0} \frac{r(\cos \theta - i\sin)}{r(\cos \theta + i \sin \theta)} = \lim_{r \to 0} \frac{(\cos \theta - i\sin \theta)}{(\cos \theta + i \sin \theta)} = \frac{(\cos \theta - i\sin)}{(\cos \theta + i \sin \theta)}$$
 	 	 	 	  	حد ندارد.
 	 	 	 	  	\section{پیوستگی یکنواخت}
 	 	 	 	  	تابع
@@ -575,6 +577,8 @@ y & x \\
  	 	 	  شرط لازم مشتق پذیر را ندارد پس در هیچ نقطه ای از 
  	 	 	  $\mathbb{C}$
  	 	 	  مشتق پذیر نیست.
+ 	 	 	  \newline
+ 	 	 	  
  	 	 	  \textbf{مثال:}
  	 	 	  \[
  	 	 	  f(z) = 
@@ -658,9 +662,11 @@ y & x \\
  	 	 	  
  	 	 	  $z$
  	 	 	  وجود داشته باشد به طوریکه در همه جا این همسایگی مشتق پذیر باشد.
+ 	 	 	  \newline
  	 	 	  
  	 	 	  \textbf{تعریف تابع تام:}
  	 	 	  تابعی که در همه جای دامنه تابع تحلیلی باشد تابع تام نامیده می‌شود.
+ 	 	 	  \newline
  	 	 	  
  	 	 	  \textbf{قضیه(شرط کافی تحلیلی بودن):}
  	 	 	  فرض کنید
@@ -794,7 +800,7 @@ y & x \\
  	 	 	  	متتناوب است و دوره متناوب آن 
  	 	 	  	$2 \pi i$
  	 	 	  	
- 	 	 	  	$$\arg(e^z) = \tan^-1(\frac{Im(e^z)}{Re(e^z)}) = \tan^-1(\frac{e^x \sin y}{e^x \cos y }) = y$$
+ 	 	 	  	$$\arg(e^z) = \tan^{-1}(\frac{Im(e^z)}{Re(e^z)}) = \tan^{-1}(\frac{e^x \sin y}{e^x \cos y }) = y$$
  	 	 	  	
  	 	 	  \end{enumerate}
  	 	 	  
@@ -1105,6 +1111,8 @@ y & x \\
 	 را به نقطه
 	 $B = z(b)$
 	 وصل می‌کند.
+	 \newline
+	 
 	 \textbf{مثال:}
 	 خط شکسته‌
 	 \[
@@ -1133,6 +1141,7 @@ y & x \\
 	 داشته باشیم
 	 $$z(t_1) \neq z(t_2)$$
 	 آن را منحنی ساده یا کمان جردن می‌نامیم.
+	 \newline
 	 
 	 \textbf{مثال:}
 	 $z(t) = t + i\ln(1 + t) \qquad 0\leq t \leq 1$
@@ -1149,11 +1158,13 @@ y & x \\
 	 دارای مشتقات پیوسته در 
 	 $a \leq t \leq b$
 	 باشند.
+	 \newline
 	 
 	 \textbf{مثال:}
 	 منحنی
 	 $z(t) = |t| + i \ln(1 + t) \quad  -\frac{1}{2} \leq t \leq \frac{1}{2}$
 	 کمان ساده هموار است.
+	 \newline
 	 
 	 \textbf{مثال:}
 	 $z(t) = (t - \sin t) + i(1 - \cos t)\quad 0 \leq t \leq 2\pi$
@@ -1189,6 +1200,8 @@ y & x \\
 	 	x = \mp \sqrt{1 - y^2} \qquad -1 \leq y \leq 1
 	 \end{cases}
 	 \]
+	 \newline
+	 
 	 \textbf{نکته:}
 	 اگر 
 	 $\gamma_1(t) , \gamma_2(t)$
@@ -1199,6 +1212,7 @@ y & x \\
 	 یعنی مقدار انتگرال به نحوه پارامتری کردن خم 
 	 $C$
 	 بستگی ندارد.
+	 \newline
 	 
 	 \textbf{مثال:}
 	 $$\int_{C} f(z) dz \qquad f(z)_ = x^2 + iy^3 \qquad (0,0) \rightarrow (1, 1), \quad C: y - x^2$$
@@ -1217,6 +1231,8 @@ y & x \\
 	 مزدوج
 	 $f = u + iv$
 	است.
+	\newline
+	
 	\textbf{مثال:}
 	کار انجام شده توسط نیروی
 	$\vec{F} = (x+y^2) \vec{i} + x^3 \vec{j}$
@@ -1225,6 +1241,8 @@ y & x \\
 	تا نقطه 
 	$B=(1, 2)$
 	را بیابید.
+	\newline
+	
 	\textbf{حل:}
 	معادله خط گذرنده از نقاط 
 	$A$
@@ -1253,11 +1271,15 @@ y & x \\
 	 دایره
 	 $z - z_0 = re^{i\theta}$
 	 جهتی عکس عقربه های ساعت می‌باشد.
-	 \textbf{حل:}
-	 $\int_{C} (z-z_0)^n dz = \int_{C} (re^{i\theta})^n dz = r^n \int (e^{i\theta})^n dz = ir^{n+1} \int_{0}^{2\pi} e^{i(n+1)\theta} d\theta$
+	 \newline
 	 
-	 $z = z_0 + re^{i\theta} \Rightarrow dz = ire^{i\theta}d\theta$
-	 $$\int_{C} (z-z_0)^n dz = ir^{n+1} \int_{0}^{2\pi} e^{i(n+1)\theta}d\theta = ir^{n+1}(\frac{1}{i(n+1)} e^{i(n+1)\theta})_{0}^{2\pi}=r^{n+1}(\frac{1}{(n+1)} e^{i(n+1)\theta})_{0}^{2\pi}$$
+	 \textbf{حل:}
+	 
+	 $$\int_{C} (z-z_0)^n dz = \int_{C} (re^{i\theta})^n dz = r^n \int (e^{i\theta})^n dz = ir^{n+1} \int_{0}^{2\pi} e^{i(n+1)\theta} d\theta$$
+	 
+	 $$z = z_0 + re^{i\theta} \Rightarrow dz = ire^{i\theta}d\theta$$
+	 $$\int_{C} (z-z_0)^n dz = ir^{n+1} \int_{0}^{2\pi} e^{i(n+1)\theta}d\theta = ir^{n+1}(\frac{1}{i(n+1)} e^{i(n+1)\theta})_{0}^{2\pi}=$$
+	 $$r^{n+1}(\frac{1}{(n+1)} e^{i(n+1)\theta})_{0}^{2\pi}$$
 	 
 	 \[
 	 \begin{cases}
@@ -1290,9 +1312,11 @@ y & x \\
 	 $C$
 	 تحلیلی باشد آنگاه
 	 $$\oint_{C} f(z) dz = 0$$
+	 \newline
 	 
 	 \textbf{مثال:}
 	 $$\int_{|z| =1} \frac{e^z}{\cos z} = 0$$
+	 \newline
 	 
 	 \textbf{نکته:}
 	 فرض کنید
@@ -1318,8 +1342,9 @@ y & x \\
 	 $C$
 	 باشد آنگاه
 	 $$f(z_0) = \frac{1}{2\pi i} \int_{C} \frac{f(z)}{z - z_0} dz \Rightarrow \int_{C} \frac{f(z)}{z - z_0} = 2\pi i f(z_0)$$
+	 \newline
 	 
-	 \textbf]{مثال:}
+	 \textbf{مثال:}
 	 انتگرال زیر را محاسبه کنید.
 	 $$\int_{|z| =1} \frac{\cosh z}{z^2 - 2z}\, dz$$
 	 
@@ -1341,6 +1366,8 @@ y & x \\
 	$z_0$
 	دارای مشتق از هر مرتبه ای است که تحلیلی اند و از رابطه زیر محاسبه می‌شود
 	$$\int_{C} \frac{f(z)}{(z - z_0)^{n+1}} dz = 2\pi i \frac{f^{(n)}(z_0)}{n!}$$
+	\newline
+	
 	\textbf{مثال:}
 	اگر
 	$c$
@@ -1358,6 +1385,7 @@ y & x \\
 	$$f''(z) = 4\exp(2z)\qquad
 	f'''(z) = 8\exp(2z) \Rightarrow f'''(0) = 8$$
 	\newline
+	
 	\textbf{مثال:}
 	حاصل انتگرال زیر را محاسبه کنید.
 	$$\int_{|z| =\frac{7}{2}} \frac{e^z}{(z - 3)(z+1)^2}\,dz$$
@@ -1371,6 +1399,7 @@ y & x \\
 	$$f(z) = \frac{e^z}{z - 3} \Rightarrow f'(z) = \frac{e^z(z - 3) - e^z}{(z - 3)^2} \Rightarrow f'(-1) = \frac{\frac{1}{e}(-4) - \frac{1}{e}}{16} = -\frac{5}{16e}$$
 	$$g(z) = \frac{e^z}{(z + 1)^2} \Rightarrow g(3) = \frac{e^3}{16}$$
 	$$\int_{C} \frac{e^z}{(z - 3)(z+1)^2}\, dz = 2\pi i(-\frac{5}{16e} + \frac{e^3}{16})$$
+	\newline
 	
 	\textbf{قضیه  مررآ(عکس قضیه کشی-گورسا)}
 	
@@ -1407,6 +1436,7 @@ y & x \\
 	$$f^{(n)}(z_0) =\frac{n!}{2\pi i} \oint_{C} \frac{f(z)}{(z - z_0)^{n+1}}dz \Rightarrow |f^{(n)}(z_0)| =\frac{n!}{2\pi} |\frac{f(z)}{(z - z_0)^{n+1}}dz|$$
 	$$\leq\frac{n!}{2\pi} \frac{|f(z)|}{|(z - z_0)^{n+1}|}dz \leq \frac{n!}{2\pi} \frac{M}{r^{n+1}}\oint dz = \frac{n!}{2\pi} \frac{M}{r^{n+1}} 2\pi(r) = n! \times \frac{M}{r^n}$$
 	\newline
+	
 	\textbf{قضیه لیوویل:}
 	اگر تابع
 	$f(z)$
@@ -1415,13 +1445,16 @@ y & x \\
 	آن‌گاه تابع 
 	$f(z)$
 	تابع ثابت است.
-	\textbf{قصیه معادله چندجمله ای}
+	\newline
+	
+	\textbf{قضیه معادله چندجمله ای}
 	$$a_nz^n + a_{n -1}z ^{n-1} + \dots + a_1z + a_0 = 0 \,\,, \,\,a_n \neq 0$$
 	دقیقا 
 	$n$
 	ریشه دارد در 
 	$\mathbb{C}$
 	\newline
+	
 	\textbf{قضیه مقدار میانگین گاس:}
 	اگر 
 	$f(z)$
@@ -1436,10 +1469,12 @@ y & x \\
 	خواهد بود یعنی
 	$$2\pi \times f(a) = \int_{0}^{2\pi} f(a + re^{i\theta})d\theta$$
 	\newline
+	
 	\textbf{مثال:}
 	انتگرال زیر را محاسبه کنید.
 	$$\int_{0}^{2\pi} \cos^2(\frac{\pi}{6} + 2e^{i\theta})d\theta=\frac{3}{4} \times 2\pi = \frac{3\pi}{2}$$
 	$$f(z) = \cos^2(z) \Rightarrow \cos^2(\frac{\pi}{6}) = \frac{3}{4}$$
+	\newline
 	
 	\textbf{قضیه ماکزیمم توابع}
 	
@@ -1453,6 +1488,7 @@ y & x \\
 	$|f(z)|$
 	مقدار ماکزیمم خود را روی مرز اختیار می‌کند.
 	\newline
+	
 	\textbf{قضیه مینیمم تابع}
 	
 	اگر تابع 
@@ -1471,6 +1507,7 @@ y & x \\
 	$|f(z)|$
 	مقدار مینیمم خود را در مرز اختیار می‌کند.
 	\newline
+	
 	\textbf{مثال:}
 	مقدار ماکزیمم و مینیمم 
 	$|f(z)|$
@@ -2077,6 +2114,96 @@ $$\frac{1}{2(z+ 1)} + \Sigma_{n = 0}^{\infty} (-1)^n \frac{(z+ 1)^{n - 1}}{2^{n 
 	تابع
 	$$e^{\frac{1}{z}}$$
 	
+	$$e^{\frac{1}{z}} = 1 + \frac{1}{z} + \frac{1}{2! z^2} + \frac{1}{3! z^3} + \dots$$
+	$|z| > 0$
+	تحلیلی است.
+	$z = 0$
+	تکین تنهاست. از نوع اساسی است.
+	$$Red_{z = 0}(f(z)) = 1$$
+	\newline
 	
+	\textbf{قضیه مانده کشی}
+	
+	فرض کنید
+	$f(z)$
+	در درون و روی مرز ساده
+	$c$
+	،
+	مگر در نقاط تکین 
+	$z_1, z_2 , \dots, z_n$
+	  در درون 
+	  $c$
+	  تحلیلی باشد فرض کنید مانده ها در نقاط 
+	$z_1, z_2 , \dots, z_n$
+	به ترتیب
+	$\alpha_1, \alpha_2 , \dots , \alpha_n$
+	باشند در این صورت 
+	$$\int_{c} f(z) dz = 2\pi i \Sigma_{i = 0}^{n} \alpha_i$$
+	\newline
+	
+	\textbf{مثال:}
+	حاصل انتگرال
+	$\int_{|z| = \sqrt{3}} \frac{z}{(z^2 - 1)^2(z^2 + 1)} dz$
+	را بدست آورید.
+	$$z = \mp 1 \quad , \quad z = \mp i$$
+	حال مانده ها را طبق مانده کشی می‌نویسیم.
+	$$z = 1 \quad z = i \quad z = -i$$
+	طبق قضیه مانده کشی کافی است
+	$$Res_{z = 1} f(z)\,,\,Res_{z = i} f(z) \,,\, Res_{z=-i} f(z)$$
+	را حساب می‌کنیم.
+	$$Res_{z = i} f(z) = \lim_{z \to i} (z - i) f(z) = \frac{1}{8} $$
+	$$\frac{1}{(m - 1)_{0}^{1}}(\lim_{z \to z_0} (z - z_0)^m f(z))$$
+	$$\frac{i}{(i^ - 1)^2( i + i)} = \frac{1}{8}$$
+	
+	$$Res_{z = -i} f(z) = \lim_{z \to -i} (z +i) f(z) =\lim_{z \to -i}\frac{z}{(z^2 - 1)^2(z - i)} = \frac{-i}{(-2)^2 \times (-2i)} = \frac{1}{8} $$
+	
+	$$Res(f(z)) = \lim_{z to 1} \frac{d}{dz} (z  - 1)^2 \times f(z) = \lim_{z to 1}\frac{d}{dz} \frac{z}{(z+ 1)^2 (z^2 + 1)} = -\frac{1}{8}$$
 \end{enumerate}
+
+\textbf{تکته:}
+فرض کنید تابع
+$f(z)$
+در 
+$z = z_0$
+دارای قطب دوگانه در 
+$z_0$
+باشد یعنی 
+$Q(z_0) = 0 \,,\, Q'(z_0) = 0$
+اما
+$Q''(z_0)\neq 0$
+در این صورت 
+$$Res \, f(z) = \frac{2}{(Q''(z_0))^2}[p'(z_0)Q''(z_0) - \frac{1}{3} p(z_0) Q'''(z_0)]$$
+\newline
+
+\textbf{مثال:}
+مانده تابع
+$f(z) = \frac{\cos z}{(\ln z - 1)^2}$
+را در نقطه 
+$z = 0$
+بیابید.
+$$p'(z) = -\sin z \Rightarrow p'(e) = -\sin e$$
+$$Q(z) = (\ln z - 1)^2$$
+$$Q'(z) = 2(\ln z - 1)\times (\frac{1}{z})$$
+$$Q''(z) = 2(\frac{1}{z})^2  - \frac{2}{z^2}(\ln z - 1)$$
+$$Q'''(e) = 2(\frac{1}{e})^2 - \frac{2}{e^2}(1 - 1) = \frac{2}{e^2}$$
+$$Q'''(z) = 4(\frac{1}{z})(-\frac{1}{z^2}) + \frac{4}{z^3}(\ln z - 1) - \frac{2}{z^2}(\frac{1}{z}) = -\frac{4}{z^3} + \frac{4}{z^3}(\ln z) - \frac{4}{z^3} - \frac{2}{z^3} = \frac{2}{z^3}(-5+ 2\ln z)$$
+$$Q'''(e) = \frac{2}{e^3} (-5 + 2) = -\frac{6}{e^3}$$
+\newline
+
+\textbf{نکته:}
+برای حل انتگرال از نوع 
+$\int_{0}^{2\pi} R(\cos  \theta , \sin \theta) d\theta$
+با تعویض متغیر
+$$\cos \theta = \frac{1}{2}(z^n + z^{-n}) \qquad \sin \theta = \frac{1}{2i}(z^n + z^{-n})$$
+$$z = e^{i\theta} \quad , \quad d\theta = \frac{dz}{iz}$$
+انتگرال به صورت 
+
+$$\int_{0}^{2\pi} R(\cos  \theta , \sin \theta) d\theta = \int_{|z| =1} R(\frac{z^2 + 1}{2z} , \frac{z^2 - 1}{2iz})\frac{dz}{iz}$$
+\newline
+
+\textbf{مثال:}
+حاصل انتگرال 
+$\int_{0}^{2\pi} \frac{d\theta}{|3 + 1|\cos\theta}$
+
+
 \end{document}
